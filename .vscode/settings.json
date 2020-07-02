@@ -1,0 +1,75 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.validation.template": false,
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_attributes": "force-aligned"
+    },
+    "prettyhtml": {
+      "printWidth": 100,
+      "singleQuote": false,
+      "wrapAttributes": false,
+      "sortAttributes": false
+    },
+    "prettier": {
+      "semi": true,
+      "singleQuote": true,
+      "trailingComma": "all"
+    }
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  "minapp-vscode.disableAutoConfig": true,
+  "sync.gist": "9dc4f68e9775aedde1eabdc24e756722",
+  // #编辑器设置
+  "editor.detectIndentation": false,
+  // 重新设定tabsize
+  "editor.tabSize": 2,
+  // 粘贴自动格式化
+  "editor.formatOnPaste": true,
+  // #自动补全括号
+  "editor.autoClosingBrackets": "always",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  // #eslint配置，需安装eslint插件
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": -1,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vsicons.dontShowNewVersionMessage": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "[json]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "extensions.ignoreRecommendations": true,
+}

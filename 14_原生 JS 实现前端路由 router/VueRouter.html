@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VueRouter</title>
+  <style type="text/css">
+    .router_box,
+    #router-view {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .router_box>a {
+      padding: 0 10px;
+      color: #42b983;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="router_box">
+    <a href="/" class="router">home</a>
+    <a href="/about" class="router">about</a>
+  </div>
+  <div id="router-view"></div>
+
+  <script type="text/javascript">
+    class VueRouter {
+      constructor(...args) {
+        this.routes = args[0].routes || [];
+        this.router_list = document.querySelectorAll('.router');
+        this.router_view = document.querySelector("#router-view");
+        this.init();
+        this.routerChange();
+      }
+
+      init() {
+        this.router_list.forEach(item => {
+          item.addEventListener("click", (event) => {
+            // 防止点击跳转
+            event.preventDefault();
+            window.location.hash = item.getAttribute("href");
+          }, false);
+        });
+        window.addEventListener('hashchange', () => {
+          this.routerChange();
+        });
+      }
+
+      routerChange() {
+        const hash = window.location.hash.replace(/\#/g, '');
+        const index = this.routes.findIndex(item => item.path === hash);
+        if (index !== -1) {
+          this.router_view.innerHTML = this.routes[index].component;
+        } else {
+          // 默认重定向回首页
+          window.location.href = '#/';
+        }
+      }
+    }
+
+    new VueRouter({
+      routes: [
+        {
+          path: '/',
+          component: `<div data-v-205bd830="" class="hello"><h1 data-v-205bd830="">Welcome to Your Vue.js App</h1></div>`
+        },
+        {
+          path: '/about',
+          component: `<div class="about"><h1>This is an about page</h1></div>`,
+        },
+        {
+          path: '*',
+          redirect: '/'
+        }
+      ]
+    });
+  </script>
+</body>
+
+
+</html>
