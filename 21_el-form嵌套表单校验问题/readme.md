@@ -4,9 +4,10 @@
 
 ## 需求
 
-前端开发过程中，经常遇到表单校验的需求，element-ui 为我们带来了极大的便利，前端只需要更专注于前端逻辑。
+前端开发过程中，经常遇到表单开发的需求，element-ui 为我们带来了极大的便利，前端只需要更专注于前端逻辑。
 
 我们往往会遇到相对复杂的表单，比如下面的表单:
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-14e466e0699d515f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 我们设计的时候可以把它设计成 3 级表单，即划分表单到每一个校验项(输入框，下拉框的等)
@@ -68,7 +69,7 @@ form: {
       packet_name: '',
     },
   ],
-},
+},阿
 ```
 
 2. 封装一个 check_form 方法
