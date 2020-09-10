@@ -503,12 +503,12 @@ this.ctx.model.Article.aggregate([
 
 有几个参数：
 
-|     语法     |            解释             |
-| :----------: | :-------------------------: |
-|     from     |          源数据表           |
-|  localField  |      待 Join 的数据表       |
+|     语法     |            解释            |
+| :----------: | :------------------------: |
+|     from     |          源数据表          |
+|  localField  |      待 Join 的数据表      |
 | foreignField | Join 的数据表的 match 字段 |
-|      as      |   为输出文档的新增值命名    |
+|      as      |   为输出文档的新增值命名   |
 
 查找文章详情，根据 tag_id 查找 tag 表的详情
 
