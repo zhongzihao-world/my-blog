@@ -59,7 +59,8 @@ const koaMount = require('koa-mount');
 app.use(koaMount('/', koaStatic(resolve('../dist'))));
 ```
 
-这样差不多就完成了，跑服务，然后打开 3000 端口：
+这样差不多就完成了，跑服务然后打开 3000 端口，项目能够正常访问：
+![](https://upload-images.jianshu.io/upload_images/10390288-8ac039a7c54e90c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 2. 转发接口请求
 
@@ -85,7 +86,13 @@ app.use(async (ctx, next) => {
 });
 ```
 
-最后再打开浏览器查看，大功告成~
+最后再打开浏览器查看，大功告成,接口转发成功~
+
+![](https://upload-images.jianshu.io/upload_images/10390288-2298e4d082470611.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 完整代码
+
+[完整代码](https://github.com/zhongzihao1996/my-blog/blob/master/22_%E4%BD%BF%E7%94%A8node%E8%BD%AC%E5%8F%91%E8%AF%B7%E6%B1%82/server.js)
 
 ---
 
