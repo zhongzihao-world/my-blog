@@ -81,6 +81,7 @@ export const nextTick = (function () {
     var observer = new MutationObserver(nextTickHandler)
     var textNode = document.createTextNode(String(counter))
     observer.observe(textNode, {
+      // 监听文本内容的修改。
       characterData: true
     })
     timerFunc = () => {
