@@ -3,10 +3,14 @@
  * 延迟任务以异步执行它
  */
 export const nextTick = (function () {
+  // 所有回调函数
   const callbacks = []
+  // 是否正在执行
   let pending = false
+  // 异步触发执行回调函数
   let timerFunc
 
+  // 遍历执行回调函数
   function nextTickHandler() {
     pending = false
     const copies = callbacks.slice(0)
@@ -43,6 +47,9 @@ export const nextTick = (function () {
   //触发几次后完全停止工作。。。所以，如果是本地人
   //承诺可用，我们将使用它：
 
+
+  // 根据环境判断异步人不类型
+  // 优先级依次为：Promise、MutationObserver、setTimeout
   if (typeof Promise !== 'undefined' && isNative(Promise)) {
     var p = Promise.resolve()
     var logError = err => { console.error(err) }
@@ -70,12 +77,14 @@ export const nextTick = (function () {
     //如果本机Promise不可用，请使用MutationObserver，
     //例如PhantomJS、iOS7、Android 4.4
     var counter = 1
+    // 监听dom节点变化,然后触发执行 nextTickHandler
     var observer = new MutationObserver(nextTickHandler)
     var textNode = document.createTextNode(String(counter))
     observer.observe(textNode, {
       characterData: true
     })
     timerFunc = () => {
+      // 在 0 1 之间不断变化
       counter = (counter + 1) % 2
       textNode.data = String(counter)
     }
@@ -88,10 +97,12 @@ export const nextTick = (function () {
     }
   }
 
+  // 实时往数组里塞回调
   return function queueNextTick(cb?: Function, ctx?: Object) {
     let _resolve
     callbacks.push(() => {
       if (cb) {
+        // 简单包装一下
         try {
           cb.call(ctx)
         } catch (e) {
@@ -101,6 +112,7 @@ export const nextTick = (function () {
         _resolve(ctx)
       }
     })
+    // 没有回调在执行了
     if (!pending) {
       pending = true
       timerFunc()
