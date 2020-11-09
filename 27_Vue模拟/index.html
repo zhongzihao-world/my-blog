@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue模拟</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{msg}}</h1>
+    <input v-model="msg" type="text">
+    <hr />
+    <p v-text="msg"></p>
+    <p v-text="people.name"></p>
+    <p>{{people.name}}</p>
+    <p>{{people.age}}</p>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+          msg: 'helloworld',
+          people: {
+            name: '小豪',
+            age: 24,
+          }
+        }
+      },
+    });
+  </script>
+</body>
+
+</html>
