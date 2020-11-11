@@ -38,10 +38,12 @@ class Compile {
     this.el.appendChild(fragment);
   }
 
+  // 是否元素节点
   isElementNode(node) {
     return node.nodeType === 1;
   }
 
+  // 文档碎片
   nodeFragment(el) {
     const f = document.createDocumentFragment();
     let first_child;
@@ -51,18 +53,17 @@ class Compile {
     return f;
   }
 
+  // 是否是指令 v-model v-text v-html v-on:click等
   isDirective(name) {
     return name.startsWith('v-');
   }
 
   compile(fragment) {
-    const child_nodes = fragment.childNodes;
-    [...child_nodes].forEach(node => {
+    const childNodes = fragment.childNodes;
+    [...childNodes].forEach(node => {
       if (this.isElementNode(node)) {
-        // 元素节点
         this.compileElement(node);
       } else {
-        // 文本节点
         this.compiletext(node);
       }
       if (node.childNodes && node.childNodes.length) {
@@ -71,6 +72,7 @@ class Compile {
     })
   }
 
+  // 编译元素节点
   compileElement(node) {
     const attributes = node.attributes;
     [...attributes].forEach(attr => {
@@ -85,8 +87,11 @@ class Compile {
     });
   }
 
+  // 编译文本节点
   compiletext(node) {
-
+    const is_template = /\{\{(.*)\}\}/;
+    if (is_template.test(node.nodeValue)) {
+    }
   }
 }
 
