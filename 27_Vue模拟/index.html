@@ -16,6 +16,7 @@
     <p v-text="people.name"></p>
     <p>{{people.name}}</p>
     <p>{{people.age}}</p>
+    <div v-html="html"></div>
   </div>
 
   <script src="./vue.js"></script>
@@ -25,6 +26,7 @@
       data() {
         return {
           msg: 'helloworld',
+          html: '<h2>hello</h2>',
           people: {
             name: '小豪',
             age: 24,

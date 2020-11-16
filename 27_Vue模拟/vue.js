@@ -5,24 +5,44 @@ const compileUtils = {
       return data[currentVal];
     }, vm.$data);
   },
+  // v-text
   text(node, expr, vm) {
-    const value = this.getVal(expr, vm);
+    let value;
+    if (expr.indexOf('{{') !== -1) {
+      value = expr.replace(/\{\{(.*)\}\}/g, (...args) => {
+        console.log(args);
+        return this.getVal(args[1], vm);
+      });
+    } else {
+      value = this.getVal(expr, vm);
+    }
     this.updater.textUpdater(node, value);
   },
+  // v-html
   html(node, expr, vm) {
-
+    const value = this.getVal(expr, vm);
+    this.updater.htmlUpdater(node, value);
   },
+  // v-model
   model(node, expr, vm) {
-
+    const value = this.getVal(expr, vm);
+    this.updater.modelUpdater(node, value);
   },
+  // v:on="click"
   on(node, expr, vm, eventName) {
 
   },
   updater: {
     textUpdater(node, value) {
       node.textContent = value;
-    }
-  }
+    },
+    htmlUpdater(ndoe, value) {
+      ndoe.innerHTML = value;
+    },
+    modelUpdater(node, value) {
+      node.value = value;
+    },
+  },
 };
 
 
@@ -82,15 +102,21 @@ class Compile {
         // v-text v-html v-model v-on:click
         const [, directive] = name.split('-');
         const [directiveName, eventName] = directive.split(':');
+        // 编译，更新数据
         compileUtils[directiveName](node, value, this.vm, eventName);
+        // 删除自定义指令
+        node.removeAttribute(`v-${directive}`);
       }
+
     });
   }
 
   // 编译文本节点
   compiletext(node) {
     const is_template = /\{\{(.*)\}\}/;
-    if (is_template.test(node.nodeValue)) {
+    const content = node.textContent;
+    if (is_template.test(content)) {
+      compileUtils.text(node, content, this.vm);
     }
   }
 }
