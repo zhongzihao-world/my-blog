@@ -10,7 +10,7 @@ const compileUtils = {
     let value;
     if (expr.indexOf('{{') !== -1) {
       value = expr.replace(/\{\{(.*)\}\}/g, (...args) => {
-        console.log(args);
+        // console.log(args);
         return this.getVal(args[1], vm);
       });
     } else {
@@ -77,6 +77,10 @@ class Compile {
   isDirective(name) {
     return name.startsWith('v-');
   }
+  // 是否绑定函数
+  isFunction(name) {
+    return name.startsWith('v-on:');
+  }
 
   compile(fragment) {
     const childNodes = fragment.childNodes;
@@ -104,10 +108,14 @@ class Compile {
         const [directiveName, eventName] = directive.split(':');
         // 编译，更新数据
         compileUtils[directiveName](node, value, this.vm, eventName);
+
+        // 判断是否绑定了函数
+        if (this.isFunction(name)) {
+          console.log(name);
+        }
         // 删除自定义指令
         node.removeAttribute(`v-${directive}`);
       }
-
     });
   }
 

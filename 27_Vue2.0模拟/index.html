@@ -16,7 +16,7 @@
     <p v-text="people.name"></p>
     <p>{{people.name}}</p>
     <p>{{people.age}}</p>
-    <div v-html="html"></div>
+    <div v-html="html" v-on:click="print"></div>
   </div>
 
   <script src="./vue.js"></script>
@@ -32,6 +32,11 @@
             age: 24,
           }
         }
+      },
+      methods: {
+        print(){
+          console.log(this.people.name);
+        },
       },
     });
   </script>
