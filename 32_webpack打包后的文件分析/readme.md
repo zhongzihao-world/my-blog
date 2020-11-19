@@ -89,7 +89,7 @@ module.exports = {
 其实就是集成了所有模块的一个集合，至此整个模块流程分析完了
 
 ---
-# [源码](https://zhuanlan.zhihu.com/p/86426969)
+# [源码](https://github.com/zhongzihao1996/my-blog/blob/master/32_webpack%E6%89%93%E5%8C%85%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90/dist/main.js)
 
 ---
 END
