@@ -134,3 +134,8 @@ console.log('同步任务');
 相信你狠容易就能理解下面的执行结果，虽然 setTimeout 在前面，可是它是异步任务主线程直接挂起它等到当前所有的同步任务都执行完了才会去读取事件队列并执行。
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-a555571bc1d51f20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+## 2. 宏任务和微任务
+
+![](https://upload-images.jianshu.io/upload_images/10390288-ac2820314f46ef55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
