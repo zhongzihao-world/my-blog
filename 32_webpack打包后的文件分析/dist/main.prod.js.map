@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "webpack://test/./add.js",
+    "webpack://test/./sub.js",
+    "webpack://test/webpack/bootstrap",
+    "webpack://test/./index.js"
+  ],
+  "names": [
+    "module",
+    "exports",
+    "add",
+    "a",
+    "b",
+    "sub",
+    "__webpack_module_cache__",
+    "__webpack_require__",
+    "moduleId",
+    "__webpack_modules__",
+    "console",
+    "log"
+  ],
+  "mappings": "qBAEAA,EAAOC,QAAU,CAAEC,IAFP,CAACC,EAAGC,IAAMD,EAAIC,I,QCE1BJ,EAAOC,QAAU,CAAEI,IAFP,CAACF,EAAGC,IAAMD,EAAIC,KCCtBE,EAA2B,GAG/B,SAASC,EAAoBC,GAE5B,GAAGF,EAAyBE,GAC3B,OAAOF,EAAyBE,GAAUP,QAG3C,IAAID,EAASM,EAAyBE,GAAY,CAGjDP,QAAS,IAOV,OAHAQ,EAAoBD,GAAUR,EAAQA,EAAOC,QAASM,GAG/CP,EAAOC,Q,MCpBf,MAAM,IAAEC,GAAQ,EAAQ,MAClB,IAAEG,GAAQ,EAAQ,KAExBK,QAAQC,IAAIT,EAAI,GAAI,IACpBQ,QAAQC,IAAIN,EAAI,GAAI,K",
+  "file": "main.js",
+  "sourcesContent": [
+    "const add = (a, b) => a + b;\r\n\r\nmodule.exports = { add };\r\n",
+    "const sub = (a, b) => a - b;\r\n\r\nmodule.exports = { sub };\r\n",
+    "// The module cache\nvar __webpack_module_cache__ = {};\n\n// The require function\nfunction __webpack_require__(moduleId) {\n\t// Check if module is in cache\n\tif(__webpack_module_cache__[moduleId]) {\n\t\treturn __webpack_module_cache__[moduleId].exports;\n\t}\n\t// Create a new module (and put it into the cache)\n\tvar module = __webpack_module_cache__[moduleId] = {\n\t\t// no module.id needed\n\t\t// no module.loaded needed\n\t\texports: {}\n\t};\n\n\t// Execute the module function\n\t__webpack_modules__[moduleId](module, module.exports, __webpack_require__);\n\n\t// Return the exports of the module\n\treturn module.exports;\n}\n\n",
+    "const { add } = require('./add');\r\nconst { sub } = require('./sub');\r\n\r\nconsole.log(add(99, 1));\r\nconsole.log(sub(99, 1));"
+  ],
+  "sourceRoot": ""
+}
