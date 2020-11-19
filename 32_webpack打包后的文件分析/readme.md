@@ -75,6 +75,7 @@ module.exports = {
 其实就是入口 index.js 里的代码块，对导出模块部分做了相应的处理，其内部调用 __webpack_require__ 函数实现了模块的导入功能
 
 2. 展开 __webpack_require__ 函数:
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-d47ba7b205db30dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 内部也比较简单，使用了 __webpack_module_cache__ 缓存模块，第一次导入模块时 在 __webpack_modules__ 根据模块id(如 './add.js"')导入相应的模块并写入缓存
