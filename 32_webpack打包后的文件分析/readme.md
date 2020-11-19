@@ -17,22 +17,19 @@ Webpack 可以将多种静态资源 js、css、less 转换成一个静态文件�
 新建两个 js , 导出简单的函数
 
 ``` bash 
-
 # add.js
-
 const add = (a, b) => a + b; 
 
-# demo.js
-
+# sub.js
 const sub = (a, b) => a - b; 
 
 ``` 
-新建主入口方法 index,引入demojs方法
+新建主入口方法 index.js,分别引入对应模块方法
 
 ``` bash 
 # index.js
-
-const { add, sub } = require('./demo');
+const { add } = require('./add');
+const { sub } = require('./sub');
 
 console.log(add(99, 1));
 console.log(sub(99, 1));
@@ -43,8 +40,8 @@ console.log(sub(99, 1));
 ``` bash 
 # webpack.config.js
 module.exports = {
-  // mode: 'development',
-  mode: 'production',
+  mode: 'development',
+  // mode: 'production',
   devtool: 'source-map',
   entry: resolve('./index.js'),
   output: {
@@ -58,6 +55,7 @@ module.exports = {
 ![](https://upload-images.jianshu.io/upload_images/10390288-29109ebbdeaa0eb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 执行打包后的js，运行正常
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-1c59c256437b30cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ---
