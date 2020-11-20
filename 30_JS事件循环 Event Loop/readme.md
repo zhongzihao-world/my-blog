@@ -8,8 +8,6 @@
 
 我的理解，一个程序运行，至少有 1 个进程，一个进程至少有一个线程，进程是操作系统分配内存资源的最小单位，线程是 cpu 调度的最小单位。打个比方，进程好比一个工厂，线程就是里面的工人，工厂内有多个工人，里面的工人可以共享里面的资源，多个工人可以一起协调工作，类似于多线程并发执行。
 
-更多详情：[原创 进程和线程的区别](https://www.cnblogs.com/lmule/archive/2010/08/18/1802774.html)
-
 ## 2. 浏览器是多进程的
 
 打开 windows 任务管理器，可以看到浏览器开了很多个进程，每一个 tab 页都是单独的一个进程，所以一个页面崩溃以后并不会影响其他页面
@@ -235,20 +233,17 @@ setTimeout(() => {
 
 其中有一个问题是，谷歌下经测试并不玩全遵循两个宏任务之间执行ui渲染，把 setTimeout 事件设置为0，发现文字不会由黑>红>蓝，而是直接黑>蓝，为了模拟效果所以我把时间间隔设置为了17ms(我的屏幕是60HZ也就是16. 67ms刷新一次)
 
-![](https://upload-images.jianshu.io/upload_images/10390288-9411ca79097d9d4e.gif?imageMogr2/auto-orient/strip)
+![Vue nextTick 源码](https://github.com/zhongzihao1996/my-blog/tree/master/26_Vue%20nextTick%20%E6%BA%90%E7%A0%81)
 
-
-
-### 4. Vue.$nextTick 
+### 4. Vue. $nextTick 
 
 使用vue的小伙伴们可能工作中经常用到这个api，Vue的官方介绍：
 
 > 将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。
 
-其内部实现就是利用了 microtask(微任务)，
+其内部实现就是利用了 microtask(微任务)，来延时执行一段代码(获取dom节点的值), 即当前所有同步代码执行完后执行 microtask(微任务)，可参照之前的文章：
 
 [Vue nextTick 源码]()
-
 
 # 参考
 
