@@ -169,9 +169,7 @@ for (let macrotask of macrotask_list) {
   macrotask(); 
   # 执行所有微任务
   for (let microtask of microtask_list) {
-
     microtask();
-
   }
   #  UI渲染
   ui_render(); 
@@ -197,20 +195,18 @@ for (let macrotask of macrotask_list) {
 执行下面的代码会发生什么？
 
 ``` bash 
-document. querySelector('#app'). style. color = 'yellow'; 
+document. querySelector('#app').style.color = 'yellow'; 
 
 Promise. resolve(). then(() => {
-  document. querySelector('#app'). style. color = 'red'; 
+  document. querySelector('#app').style.color = 'red'; 
 }); 
 
 setTimeout(() => {
-  document. querySelector('#app'). style. color = 'blue'; 
-  Promise. resolve(). then(() => {
-
+  document.querySelector('#app').style.color = 'blue'; 
+  Promise.resolve(). then(() => {
     for (let i = 0; i < 99999; i++) {
       console.log(i);
     }
-
   }); 
 }, 17); 
 ```
@@ -233,23 +229,29 @@ setTimeout(() => {
 
 其中有一个问题是，谷歌下经测试并不玩全遵循两个宏任务之间执行ui渲染，把 setTimeout 事件设置为0，发现文字不会由黑>红>蓝，而是直接黑>蓝，为了模拟效果所以我把时间间隔设置为了17ms(我的屏幕是60HZ也就是16. 67ms刷新一次)
 
-![Vue nextTick 源码](https://github.com/zhongzihao1996/my-blog/tree/master/26_Vue%20nextTick%20%E6%BA%90%E7%A0%81)
+![](https://upload-images.jianshu.io/upload_images/10390288-9411ca79097d9d4e.gif?imageMogr2/auto-orient/strip)
+
 
 ### 4. Vue. $nextTick 
 
-使用vue的小伙伴们可能工作中经常用到这个api，Vue的官方介绍：
+使用vue的小伙伴们可能工作中可能会经常用到这个api，Vue的官方介绍：
 
 > 将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。
 
 其内部实现就是利用了 microtask(微任务)，来延时执行一段代码(获取dom节点的值), 即当前所有同步代码执行完后执行 microtask(微任务)，可参照之前的文章：
 
-[Vue nextTick 源码]()
+[Vue nextTick 源码](https://github.com/zhongzihao1996/my-blog/blob/master/26_Vue%20nextTick%20%E6%BA%90%E7%A0%81/nextTick.js)
 
 # 参考
 
 [原创 进程和线程的区别](https://www.cnblogs.com/lmule/archive/2010/08/18/1802774.html)
 
 [JS 是单线程，你了解其运行机制吗？](https://github.com/biaochenxuying/blog/issues/8)
+
+# 源码
+
+[源码](https://github.com/zhongzihao1996/my-blog/blob/master/30_JS%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%20Event%20Loop/index.js)
+
 
 ---
 END
