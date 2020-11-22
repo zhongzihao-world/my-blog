@@ -15,11 +15,12 @@
     <p v-text="msg"></p>
     <p v-text="people.name"></p>
     <p>{{people.name}}</p>
-    <p>{{people.age}}</p>
+    <p @click="print">{{people.age}}</p>
     <div v-html="html" v-on:click="print"></div>
   </div>
 
   <script src="./vue.js"></script>
+  <script src="./observer.js"></script>
   <script>
     let vm = new Vue({
       el: '#app',
@@ -34,8 +35,8 @@
         }
       },
       methods: {
-        print(){
-          console.log(this.people.name);
+        print() {
+          console.log(this);
         },
       },
     });

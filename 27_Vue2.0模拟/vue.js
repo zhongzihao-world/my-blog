@@ -30,7 +30,9 @@ const compileUtils = {
   },
   // v:on="click"
   on(node, expr, vm, eventName) {
-
+    const fn = vm.$options.methods && vm.$options.methods[expr];
+    // 把实例绑过去
+    node.addEventListener(eventName, fn.bind(vm), false);
   },
   updater: {
     textUpdater(node, value) {
@@ -77,9 +79,9 @@ class Compile {
   isDirective(name) {
     return name.startsWith('v-');
   }
-  // 是否绑定函数
-  isFunction(name) {
-    return name.startsWith('v-on:');
+
+  isEventname(name) {
+    return name.startsWith('@');
   }
 
   compile(fragment) {
@@ -109,12 +111,12 @@ class Compile {
         // 编译，更新数据
         compileUtils[directiveName](node, value, this.vm, eventName);
 
-        // 判断是否绑定了函数
-        if (this.isFunction(name)) {
-          console.log(name);
-        }
         // 删除自定义指令
         node.removeAttribute(`v-${directive}`);
+      } else if (this.isEventname(name)) {
+        const [, eventName] = name.split('@');
+        // 编译，更新数据
+        compileUtils['on'](node, value, this.vm, eventName);
       }
     });
   }
@@ -137,6 +139,7 @@ class Vue {
     this.$options = options;
     // 挂载
     if (this.$el) {
+      new Observer(this.$data);
       new Compile(this.$el, this);
     }
   }
