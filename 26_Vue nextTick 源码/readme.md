@@ -114,3 +114,11 @@ function nextTickHandler() {
 ```
 
 到这里 nextTice 函数的主线逻辑就很清楚了。定义一个变量 callbacks，把通过参数 cb 传入的函数用一个函数包装一下，处理执行失败和参数 cb 不存在的场景，然后 添加到 callbacks。调用 timerFunc 函数，在其中遍历 callbacks 执行每个函数，因为 timerFunc 是一个异步执行的函数，且定义一个变量 pending来保证一个事件循环中只调用一次 timerFunc 函数。这样就实现了 nextTice 函数异步执行传入的函数的作用了。
+
+# 源码
+
+[源码分析](https://github.com/zhongzihao1996/my-blog/blob/master/26_Vue%20nextTick%20%E6%BA%90%E7%A0%81/nextTick.js)
+
+
+---
+END
