@@ -21,6 +21,10 @@ const compileUtils = {
   // v-html
   html(node, expr, vm) {
     const value = this.getVal(expr, vm);
+    // 创建观察者
+    new Watcher(vm, expr, newVal => {
+      this.updater.htmlUpdater(node, newVal);
+    });
     this.updater.htmlUpdater(node, value);
   },
   // v-model
