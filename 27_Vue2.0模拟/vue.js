@@ -30,6 +30,10 @@ const compileUtils = {
   // v-model
   model(node, expr, vm) {
     const value = this.getVal(expr, vm);
+    // 创建观察者
+    new Watcher(vm, expr, newVal => {
+      this.updater.modelUpdater(node, newVal);
+    });
     this.updater.modelUpdater(node, value);
   },
   // v:on="click"
