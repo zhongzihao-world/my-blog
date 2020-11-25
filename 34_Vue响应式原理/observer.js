@@ -51,7 +51,6 @@ class Observer {
 
   observer(data) {
     if (data && typeof data === 'object') {
-      // console.log(data);
       Object.keys(data).forEach(key => {
         this.difineReactive(data, key, data[key]);
       });
@@ -66,6 +65,7 @@ class Observer {
       enumerable: true,
       configurable: false,
       get() {
+        // 防止初始化的时候也被push
         Dep.target && dep.addSub(Dep.target);
         return value;
       },
@@ -73,8 +73,8 @@ class Observer {
         this.observer(newVal);
         if (newVal !== value) {
           value = newVal;
+          dep.notify();
         }
-        dep.notify();
       },
     });
   }
