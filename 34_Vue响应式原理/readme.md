@@ -1,6 +1,6 @@
 # 前言
 
-Vue 最独特的特性之一，是其非侵入性的响应式系统。比如我们修改了数据，那么依赖这些数据的视图都会进行更新，大大提高了我们的|"搬砖"效率，回想一下初学 JS 的时候海量的 Dom操作~.~......，Vue 通过数据驱动视图，极大的将我们从繁琐的DOM操作中解放出来。
+Vue 最独特的特性之一，是其非侵入性的响应式系统。比如我们修改了数据，那么依赖这些数据的视图都会进行更新，大大提高了我们的"搬砖"效率，回想一下初学 JS 的时候海量的 Dom操作~.~......，Vue 通过数据驱动视图，极大的将我们从繁琐的DOM操作中解放出来。
 
 如下图，我们改变了 msg 的值，视图也响应式的进行了更新
 
@@ -18,12 +18,12 @@ Vue 最独特的特性之一，是其非侵入性的响应式系统。比如我�
 
 梳理一下流程:
 
-- 1. Vue 初始化 => 劫持数据 data 设置 get、set （拦截数据读写）
-- 2. Compile 解析模板 => 生成 watcher => 读取数据，触发get 方法 => Dep 收集依赖（watcher）
+- 1. Vue 初始化 => 劫持 data 设置 get、set （拦截数据读写）
+- 2. Compile 解析模板 => 生成 watcher => 读取 data，触发 get 方法 => Dep 收集依赖（watcher）
 - 3. 数据变化 => 触发 set方法 => 通知 Dep 中的所有  watcher => 视图更新
 
 
-对于这 Observer、Dep 和 Watcher 这三大金刚 ，我初学的时候也是傻傻的分不清楚很懵，我的理解是：
+对于 **Observer、Dep 和 Watcher** 这三大金刚 ，我初学的时候也是傻傻的分不清楚很懵，我的理解是：
 
 
 **Dep(dependence)** 即依赖收集器，收集 Watcher 即观察者。
@@ -53,7 +53,7 @@ data() {
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-72976326be0b846c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-1. Dep
+**1. Dep**
 
 我们先实现 Dep，Dep 我们可以用数组来模拟，它应该有两个方法：
 
@@ -77,7 +77,7 @@ class Dep {
 }
 ```
 
-2. Watcher
+**2. Watcher**
 
 Watcher 实现如下，其中 cb 是更新视图的方法，关键点在于 oldVal，它有两个用处：
 
@@ -115,11 +115,11 @@ class Watcher {
 
 ``` Dep.target = this``` 的用处是相当于设置了一个全局变量**让 Dep 能收集到 watcher 自己**，后面 ```Dep.target = null``` 用处是销毁全局变量
 
-3. Observer
+**3. Observer**
 
 Observer 实现如下，通过 Object.defineProperty 拦截数据的读写操作：
 
-- get 收集依赖，注意判断 Dep.target 是否有值，因为模板解析的时候也会读取数据触发 get 方法
+- get 收集依赖，**注意判断 Dep.target 是否有值**，因为模板解析的时候也会读取数据触发 get 方法
 - set 通知依赖收集器，更新视图
 
 ```bash
@@ -152,9 +152,9 @@ class Observer {
 
 ```
 
-4. Compile
+**4. Compile**
 
-到这里我们已经实现了 Observer、Dep 和 Watcher，实现了数据的响应式追踪，可是还有一个点没打通，那就是依赖收集，那么依赖什么时候收集呢？换言之我们怎么知道哪些数据依赖了哪些视图呢？
+到这里我们已经实现了 Observer、Dep 和 Watcher，实现了数据的响应式追踪，可是还有一个点没打通，那就是**依赖收集**，那么依赖什么时候收集呢？换言之我们怎么知道哪些数据依赖了哪些视图呢？
 
 在 Vue 解析模板的时候，实际上我们已经知道了哪些 Dom 依赖了哪些数据，所以是在 compile 的时候完成了模板解析并完成了依赖收集。
 
@@ -215,9 +215,10 @@ const compileUtils = {
 
 ## 什么是双向数据绑定
 
-上面我们实现了响应式的系统，但只是单向的，即数据驱动视图，什么是双向数据绑定呢？
+上面我们实现了响应式的系统，但只是单向的，即数据驱动视图，什么是双向数据绑定呢？如下图：
+![](https://upload-images.jianshu.io/upload_images/10390288-da0e19e63fd51768.gif?imageMogr2/auto-orient/strip)
 
-比如我们常见的 v-model， 就是双向数据绑定，其实它是一个语法糖：
+我们常见的 v-model， 就是双向数据绑定，其实它是一个语法糖：
 
 ``` bash
 <input v-model="msg" />
@@ -237,7 +238,7 @@ const compileUtils = {
 
 比如最简单的 input，我们只需要监听 input 事件，文本发生变化时更新数据，触发数据的 set 方法，通知所有的 watcher 更新视图
 
-我们在模板编译的时候，给对应的 dom 元素绑定相应的时间，如 input 标签绑定 input 事件并指定更新数据的回调函数：
+我们在模板编译的时候，**给 dom 元素绑定相应的事件**，如 input 标签绑定 input 事件并指定更新数据的回调函数：
 
 ``` bash 
 const compileUtils = {
