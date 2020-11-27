@@ -45,11 +45,11 @@ data() {
 <h2>{{msg}}</h2>
 ```
 
-- set：当 msg 数据改变的时候，遍历 Dep 依赖收集器，通知所有 Watcher 更新视图，即 h1、h2 标签内的文本内容
+- set：当 msg 数据改变的时候，遍历 Dep 依赖收集器，通知所有 Watcher 更新视图，即更新 h1、h2 标签内的文本内容
 
 ## 实现 Vue 的响应式系统
 
-通过上面分析，可知每一个数据有一个依赖收集器 Dep，Dep 里面存放到该数据的 Watcher，如下图所示（图片来源于网络）:
+通过上面分析，可知每一个数据有一个依赖收集器 Dep，Dep 里面存放用到该数据的 Watcher，如下图所示（图片来源于网络）:
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-72976326be0b846c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -128,7 +128,7 @@ class Observer {
   constructor(data) {
     this.observer(data, key, data[key]);
   }
-  difineReactive(obj, key, value) {
+  observer(obj, key, value) {
     const dep = new Dep();
     Object.defineProperty(obj, key, {
       enumerable: true,
