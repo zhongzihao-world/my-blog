@@ -50,7 +50,7 @@ while (len > 0) {
 
 ### 1.2 动画演示
 
-![](https://upload-images.jianshu.io/upload_images/10390288-3ca8544f3068710b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/10390288-606eef440c2cd6d9.gif?imageMogr2/auto-orient/strip)
 
 ### 1.3 代码实现
 
