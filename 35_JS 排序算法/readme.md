@@ -82,6 +82,67 @@ const bubbleSort = (list) => {
 - 1. 如果一轮外循环后，没有发生比较，说明已经排好序了，可以直接中止退出
 - 2. 记录下最后一次比较值的位置，下一次比较到这里就 OK 了
 
+## 2 选择排序
+
+### 2.1 算法步骤
+
+- 1. 首先在未排序序列中找到最小元素，存放到排序序列的起始位置
+- 2. 再从剩余未排序元素中继续寻找最小元素，然后放到已排序序列的末尾
+- 3. 重复第二步，直到所有元素均排序完毕
+
+### 2.2 动画演示
+
+![](https://upload-images.jianshu.io/upload_images/10390288-7c6b7a7af46ea9f1.gif?imageMogr2/auto-orient/strip)
+
+### 2.3 代码实现
+
+``` bash 
+const selectSort = (list) => {
+  let len = list.length;
+  let min = 0;
+  for (let i = 0; i < len - 1; i++) {
+    min = i;
+    for (let j = i + 1; j < len; j++) {
+      if (list[min] > list[j]) {
+        min = j;
+      }
+    }
+    // 每一轮比较完，交换 i 和 min 位置
+    [list[i], list[min]] = [list[min], list[i]];
+  }
+  return list;
+}
+```
+
+## 3. 插入排序
+
+### 3.1 算法步骤
+- 1. 将第一个元素看成一个有序序列，其他元素看成一个无序序列
+- 2. 取出无序序列耳朵第一个元素，与有序序列从尾向前依次比较，若 
+- 3. 重复步骤2，直至无序序列全部比较完
+
+### 3.2 动画演示
+
+![](https://upload-images.jianshu.io/upload_images/10390288-1d786d1fa686da2d.gif?imageMogr2/auto-orient/strip)
+
+### 3.3 代码实现
+
+``` bash 
+const insertSort = (list) => {
+  let len = list.length
+  for (let i = 1; i < len; i++) {
+    const temp = list[i];
+    let j = i - 1;
+    while (j >= 0 && list[j] > temp) {
+      list[j + 1] = list[j];
+      j--;
+    }
+    list[j + 1] = temp;
+  }
+  return list;
+}
+```
+
 # 参考
 
 图片均来源于该文章

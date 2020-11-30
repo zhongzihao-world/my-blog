@@ -3,7 +3,7 @@ const data = require('./data');
 /**
  * 冒泡排序
  *
- * @param {listay} list
+ * @param {Array} list
  *
  */
 

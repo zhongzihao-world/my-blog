@@ -6,18 +6,18 @@ const data = require('./data');
  * @param {Array} list
  */
 
-function insertSort(list) {
-  const arr = JSON.parse(JSON.stringify(list));
-  for (let i = 1, len = arr.length; i < len; i++) {
-    const temp = arr[i];
+const insertSort = (list) => {
+  let len = list.length
+  for (let i = 1; i < len; i++) {
+    const temp = list[i];
     let j = i - 1;
-    while (j >= 0 && arr[j] > temp) {
-      arr[j + 1] = arr[j];
+    while (j >= 0 && list[j] > temp) {
+      list[j + 1] = list[j];
       j--;
     }
-    arr[j + 1] = temp;
+    list[j + 1] = temp;
   }
-  return arr;
+  return list;
 }
 
 console.log(data);
