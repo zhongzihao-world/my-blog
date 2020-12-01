@@ -8,8 +8,6 @@
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-f5548d9568dd9903.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](https://upload-images.jianshu.io/upload_images/10390288-1b556e7f761a99af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 时间复杂度：
 
 1. 平方阶 (O(n2)) 排序 各类简单排序：直接插入、直接选择和冒泡排序。
@@ -142,6 +140,48 @@ const insertSort = (list) => {
   return list;
 }
 ```
+
+## 4. 希尔排序
+
+> 希尔排序，为了解决插入排序存在如果排序的元素开始排序时，距离它正确的位置很远时，效率极低的痛点，通过增大步伐的灵感来解决。
+
+### 4.1 算法步骤
+
+- 1. 选择一个增量序列 t1，t2，……，tk，其中 ti > tj, tk = 1；
+- 2. 按增量序列个数 k，对序列进行 k 趟排序；
+- 3. 每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。
+
+### 4.2 动画演示
+
+![](https://upload-images.jianshu.io/upload_images/10390288-78210b6bf87b6954.gif?imageMogr2/auto-orient/strip)
+
+
+### 4.3 代码实现
+``` bash 
+const hill_sort = (list) => {
+  const len = list.length;
+  let gap = 1;
+  while (gap < len / 3) {
+    gap = gap * 3 + 1;
+  }
+  while (gap >= 1) {
+    for (let i = gap; i < len; i++) {
+      const temp = list[i];
+      let j = i - gap;
+      while (j >= 0 && list[j] > temp) {
+        list[j + gap] = list[j];
+        j = j - gap;
+      }
+      list[j + gap] = temp;
+    }
+    // 重新设置 gap ，向下取整
+    gap = Math.floor(gap / 3);
+  }
+  return list;
+}
+```
+
+
 
 # 参考
 
