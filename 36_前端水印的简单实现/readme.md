@@ -39,7 +39,7 @@
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-3eaef158c237d861.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-动态获取到 wrap 的长宽并计算其能放几个水印块，并相应的设置每一个水印块的偏移值 left，top即可
+动态获取到 wrap 的长宽并计算其能放几个水印块，并相应的设置每一个水印块的偏移值 left，top即可：
 
 ``` bash 
 const wrap = document.querySelector('.wrap1');
