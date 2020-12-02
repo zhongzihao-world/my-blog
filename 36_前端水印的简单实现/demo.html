@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>前端水印实现</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrap_common {
+      position: relative;
+      margin: 0 auto;
+      width: 800px;
+      height: 44vh;
+      border: 1px solid rgba(0, 0, 0, 1);
+      background: rgba(255, 255, 255, 1);
+      overflow: hidden;
+    }
+
+    .wrap_common:first-child{
+      margin-bottom: 5vh;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- DIV绝对定位 -->
+  <div class="wrap1 wrap_common"></div>
+  <!-- canvas+背景图 -->
+  <div class="wrap2 wrap_common"></div>
+
+  <script src="./absolute_watermark.js" type="text/javascript"></script>
+  <script src="./canvas_watermark.js" type="text/javascript"></script>
+</body>
+
+</html>
