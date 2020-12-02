@@ -14,14 +14,11 @@
 <div class="wrap1 wrap_common"></div>
 
 <style>
-
 * {
-
   margin: 0; 
   padding: 0; 
 }
-
-. wrap_common {
+.wrap_common {
   position: relative; 
   margin: 0 auto; 
   width: 800px; 
@@ -30,12 +27,10 @@
   background: rgba(255, 255, 255, 1); 
   overflow: hidden; 
 }
-
-. wrap_common:first-child{
+.wrap_common:first-child{
   margin-bottom: 5vh; 
 }
 </style>
-
 ``` 
 
 ## 1. DIV绝对定位
@@ -71,12 +66,11 @@ for (let i = 0; i < columns; i++) {
 
 ## 2. canvas+背景图
 
-我们知道，可以给 div 这只样式 background，我们可以很轻松的实现背景图片，那么水印也可以通过这种方式来实现，其中背景图片通过 canvas 来画出来，并且通过 toDataURL() 将图片转为 dataURL(base64)。
+我们知道，可以给 div 设置样式 background，我们可以很轻松的实现背景图片，那么水印也可以通过这种方式来实现，其中背景图片通过 canvas 画出来，并且通过 toDataURL() 将图片转为 dataURL(base64)，最后追加到   background-image 样式中。
 
 ``` bash 
 const wrap = document. querySelector('. wrap2'); 
-wrap. style. backgroundImage = `url(${drawWaterMark()})` ; 
-
+wrap.style.backgroundImage = `url(${drawWaterMark()})` ; 
 ``` 
 
 drawWaterMark 方法实现如下 :
@@ -106,15 +100,13 @@ const drawWaterMark = (text = '小豪看世界') => {
 
 ``` bash 
 const style = document. createElement('style'); 
-style. type = 'text/css'; 
-style. innerHTML = `
-  . wrap2 {
-
+style.type = 'text/css'; 
+style.innerHTML = `
+  .wrap2 {
     background-image: url(${drawWaterMark()});
-
   }
 `; 
-document. body. appendChild(style); 
+document.body.appendChild(style); 
 ```
 emmm，看起来美观一点了~.~
 
