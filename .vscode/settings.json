@@ -63,7 +63,7 @@
   },
   "workbench.iconTheme": "vscode-icons",
   "[json]": {
-    "editor.defaultFormatter": "HookyQR.beautify"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "HookyQR.beautify"
