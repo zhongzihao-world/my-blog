@@ -62,11 +62,11 @@ emmm，可以正常查看了
 
 ``` bash
 # 恢复 blog 数据库的所有表
- mongorestore -h localhost:27017 -d blog .\
+ mongorestore -h localhost:27017 -d blog ./
 
 # 当然你也可以只恢复特定的表
 # 比如，只恢复 articles 表
-mongorestore -h localhost:27017  -c articles  -d blog .\articles.bson
+mongorestore -h localhost:27017  -c articles  -d blog ./articles.bson
 ```
 ![](https://upload-images.jianshu.io/upload_images/10390288-6f007b56004a19da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
