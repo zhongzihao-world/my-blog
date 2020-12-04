@@ -1,4 +1,4 @@
-## 效果
+# 效果
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-56e662412db9d675.gif?imageMogr2/auto-orient/strip)
 
@@ -9,7 +9,7 @@
 
 图片瀑布流布局可参考 [Vue 手写图片瀑布流组件(附源码)](https://www.jianshu.com/p/fdfd87f9b92d)
 
-## HTML 和 CSS 布局
+# HTML 和 CSS 布局
 
 布局比较简单，一个父容器 ，里面一个 mask div，一个 img div
 
@@ -41,7 +41,7 @@
 
 刚开始让 mask 置于父容器外，100%时刚好到达父容器右边界，同理很容易写出各个方向的 css 动画
 
-## JS 判断滑块方向
+# JS 判断滑块方向
 
 上一步我们已经完成了一大半，写出了各个方向的动画，**难点是如何判断鼠标进入容器的方向**
 
@@ -109,8 +109,15 @@ imgEventHandle(event: any, is_enter: boolean) {
 }
 ```
 
-## 完整代码
-[源码](https://github.com/zhongzihao1996/my-blog/tree/master/12_JS%2BCSS3%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%BB%91%E5%9D%97%E6%95%88%E6%9E%9C)
+
+
+## 源码
+
+[源码](https://github.com/zhongzihao1996/my-blog/blob/dev/blogs/11.%20JS%2BCSS3%20%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%BB%91%E5%9D%97%E6%95%88%E6%9E%9C/animation.vue)
+
+---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
 
 ---
 

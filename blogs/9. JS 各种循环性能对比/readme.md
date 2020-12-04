@@ -94,3 +94,11 @@ console.log('-----执行完毕-------');
 **普通 for 循环 > forEach > for of > map > for in**
 
 如果只考虑性能，遍历的时候优先考虑 for 循环；但不应只考虑性能**还要考虑代码语义性和可维护性**。
+
+---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
+
+END

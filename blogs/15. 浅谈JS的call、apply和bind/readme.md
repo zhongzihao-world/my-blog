@@ -1,14 +1,14 @@
-## 前言
+# 前言
 
 > call、apply、bind 的作用是改变函数运行时 this 的指向
 
 先搞懂 this，自己初学的时候对 this 是一脸懵逼的 o((⊙﹏⊙))o...
 
-## this
+# this
 
 总结了一下，this 实际上是在函数被调用时发生的绑定，它指向什么地方完全取决于函数在哪里被调用。但这里有个列外，构造函数的 this 和 es6 的箭头函数的 this 又有所不同。
 
-### 1.函数调用
+## 1.函数调用
 
 ```bash
  # Window
@@ -19,7 +19,7 @@ function print() {
 print(); // 等价于window.print()
 ```
 
-### 2.对象属性调用
+## 2.对象属性调用
 
 谁调用，this 指向谁
 
@@ -43,7 +43,7 @@ obj.extend.print(); // inside
 
 第二个输出这里可能有点难理解，记住谁调用指向谁，是 extend 调用的，指向 extend
 
-### 3.构造函数
+## 3.构造函数
 
 构造函数的 this 将指向 new 出来的对象，在该例子中即 man
 
@@ -75,7 +75,7 @@ console.log(man.extend.print()); // inside 99
 第二个输出是不是有点奇怪，是的，我们打印一下 man 对象，发现其跟上一个例子情况是一样的,记住只是构造函数的 this 指向实例对象
 ![](https://upload-images.jianshu.io/upload_images/10390288-04cc3cad23df99d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-### 4.箭头函数
+## 4.箭头函数
 
 箭头函数和匿名函数很像，不过**箭头函数没有 this，箭头头函数的 this 是继承父执行上下文里面的 this**
 
@@ -113,7 +113,7 @@ console.log(man.extend.print()); // 小明 18
 console.log(man.extend.deep_pro.print()); // 小明 18
 ```
 
-## call、apply、bind
+# call、apply、bind
 
 上面说了一大堆，搞懂了 this，回到正题
 
@@ -147,19 +147,19 @@ const demo = new Caculate('构造函数:');
 console.log(demo.add('hello', ' world')); // 构造函数:hello world
 ```
 
-### 1.call
+## 1.call
 
 ```bash
 console.log(demo.add.call({ name: 'call改变:' }, 'hello', ' call')); // call改变:hello call
 ```
 
-### 2.apply
+## 2.apply
 
 ```bash
 console.log(demo.add.apply({ name: 'apply改变:' }, ['hello', ' apply'])); // apply改变:hello apply
 ```
 
-### 3.bind
+## 3.bind
 
 bind 和 call 一样，参数是一个一个传的
 
@@ -182,11 +182,11 @@ print.call(window);
 man.extend.print.call(man.extend);
 ```
 
-## 实现简单的 call、apply、bind
+# 实现简单的 call、apply、bind
 
 我们也可以动手实现简单的 call、apply、bind，有助于加深理解
 
-### call：
+## call：
 
 ```bash
 Function.prototype.call_ = function (context, ...args) {
@@ -199,7 +199,7 @@ Function.prototype.call_ = function (context, ...args) {
 };
 ```
 
-### apply：
+## apply：
 
 ```bash
 Function.prototype.apply_ = function (context, args) {
@@ -213,7 +213,7 @@ Function.prototype.apply_ = function (context, args) {
 };
 ```
 
-### bind：
+## bind：
 
 ```bash
 Function.prototype.bind_ = function (context, ...args) {
@@ -224,7 +224,7 @@ Function.prototype.bind_ = function (context, ...args) {
 };
 ```
 
-## 扩展
+# 扩展
 
 上面讲解 this 的时候讲到 this 实际上是在函数被调用时发生的绑定，它指向什么地方完全取决于函数在哪里被调用，但又有特例: 箭头函数和构造函数
 
@@ -264,6 +264,10 @@ function Factory(fn, ...args) {
 ```
 
 以上纯手敲 + 个人理解，如有不足，欢迎指出~
+
+---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
 
 ---
 

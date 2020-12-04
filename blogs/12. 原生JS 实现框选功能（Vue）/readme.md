@@ -1,4 +1,4 @@
-## 效果
+# 效果
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-70094edb821661f1.gif?imageMogr2/auto-orient/strip)
 
@@ -7,7 +7,7 @@
 - 鼠标框选一段区域
 - 判断框选区域包含的 checkbox，进行对应处理
 
-## HTML 和 CSS 布局
+# HTML 和 CSS 布局
 
 该布局基于 element-ui，一个父容器 box，里面一个 mask div，一个 el-checkbox-group 块。其中父容器设置 position: relative; 子 mask 容器设置 position: absolute;并且其宽、高、偏移值根据鼠标当前位置动态计算
 
@@ -35,7 +35,7 @@
 }
 ```
 
-## JS 实现框选
+# JS 实现框选
 
 该部分逻辑实际上可拆分为 4 个步骤：
 
@@ -125,8 +125,14 @@ collide(rect1: any, rect2: any): boolean {
 
 难点已经攻破，遍历 checkbox 集合，每个 checkbox 都执行上面的矩形相交判断，并进行相应的勾选处理，此处不再多累述
 
-## 完整代码
-[源码](https://github.com/zhongzihao1996/my-blog/blob/master/13_%E5%8E%9F%E7%94%9FJS%20%E5%AE%9E%E7%8E%B0%E6%A1%86%E9%80%89%E5%8A%9F%E8%83%BD%EF%BC%88Vue%EF%BC%89/select.vue)
+# 源码
+
+[源码](https://github.com/zhongzihao1996/my-blog/blob/dev/blogs/12.%20%E5%8E%9F%E7%94%9FJS%20%E5%AE%9E%E7%8E%B0%E6%A1%86%E9%80%89%E5%8A%9F%E8%83%BD%EF%BC%88Vue%EF%BC%89/select.vue)
 
 ---
- END
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
+
+END

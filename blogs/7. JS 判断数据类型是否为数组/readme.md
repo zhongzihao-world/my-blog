@@ -36,3 +36,11 @@ console.log(Object.prototype.toString.call({}) === "[object Array]" ); // false
 console.log([] instanceof Array); // true
 console.log([] instanceof Object); // true
 ```
+
+---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
+
+END

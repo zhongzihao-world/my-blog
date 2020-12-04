@@ -1,8 +1,8 @@
-## 前言
+# 前言
 
 该文章是基于低版本 vue-cli2.x 创建的项目，vue-cli3.0 以后修改 webpack 配置需要在项目根目录下新建一个 **vue.config.js**，不过都是换汤不换药
 
-## 项目配置
+# 项目配置
 
 页面很简单，一段文字，和一张背景图片
 
@@ -20,7 +20,7 @@ assetsRoot: path.resolve(__dirname, '../dist'),
 assetsSubDirectory: 'static',
 ```
 
-### 访问白屏问题
+## 访问白屏问题
 
 打包后 dist 的目录是这样的
 
@@ -53,7 +53,7 @@ assetsSubDirectory：'./'
 配置完成后，再打包访问，文字出来，背景图片裂开了......
 ![](https://upload-images.jianshu.io/upload_images/10390288-238f40f68459e296.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-### 背景图片裂开
+## 背景图片裂开
 
 F12 发现，图片资源路径有问题：static/img/vague_bg.9cfff92.png。因为是在 css 里引入的 img，结合打包出来的目录结构，正确的应该是 /static/img/xxx，但问题是前面已经设置了 assetsSubDirectory 为相对路径.......
 
@@ -81,7 +81,7 @@ F12 发现，图片资源路径有问题：static/img/vague_bg.9cfff92.png。因
 设置完，再打包访问，perfect~
 ![](https://upload-images.jianshu.io/upload_images/10390288-28cf8aebcd677fed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 后言
+# 后言
 
 有些人可能会问，为什么不一开始直接设置 assetsSubDirectory：'/'，即根路径不也可以解决问题吗？
 
@@ -91,4 +91,9 @@ F12 发现，图片资源路径有问题：static/img/vague_bg.9cfff92.png。因
 
 ---
 
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
+
 END
+

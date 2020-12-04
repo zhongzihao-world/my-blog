@@ -1,4 +1,4 @@
-## 前言
+# 前言
 
 - **为什么要用 token**
 
@@ -18,7 +18,7 @@ acess_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRhMTBjOTI0NThmND
 
 服务器通过秘钥解密从而获得当前请求者的信息
 
-## 技术栈
+# 技术栈
 
 - 前端：vue + ssr
 - 后端：egg(一个 node 框架) + ts
@@ -188,6 +188,10 @@ module.exports = () => {
 ```
 
 至此 token 验证就完了，如有不足，欢迎指出
+
+---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
 
 ---
 

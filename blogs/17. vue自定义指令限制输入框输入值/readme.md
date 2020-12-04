@@ -1,14 +1,14 @@
-## 需求
+# 需求
 
 前端开发过程中，经常遇到表单校验的需求，比如校验用户输入框的内容，限制用户只能输入数字。
 
 本文内容基于 element-ui，el-form 组件可以绑定 model、rule 用于表单内容校验，但如果有多个表单多个输入框那就得写很多个 rule，虽然方法可以通用可是使用起来也是比较繁琐的，可通过自定义执行实现一次注册，多次使用。
 
-## Vue 自定义指令
+# Vue 自定义指令
 
 我们使用 el-input 作为表单的输入框
 
-### 1. 先注册一个自定义指令
+## 1. 先注册一个自定义指令
 
 ```bash
 import Vue from 'vue';
@@ -20,7 +20,7 @@ Vue.directive('LimitInputNumber', {
 });
 ```
 
-### 2.使用自定义指令
+## 2.使用自定义指令
 
 直接在组件内绑定 v-limit-input-number 指令
 
@@ -28,7 +28,7 @@ Vue.directive('LimitInputNumber', {
 <el-input  v-limit-input-number  />
 ```
 
-### 3.指令内部校验
+## 3.指令内部校验
 
 - 1.  onkeypress 事件
 
@@ -68,7 +68,7 @@ Vue.directive('LimitInputNumber', {
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-24323fcd15550e32.gif?imageMogr2/auto-orient/strip)
 
-## 完整代码
+# 源码
 
 ```bash
 import Vue from 'vue';
@@ -84,6 +84,10 @@ Vue.directive('LimitInputNumber', {
   },
 });
 ```
+
+---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
 
 ---
 

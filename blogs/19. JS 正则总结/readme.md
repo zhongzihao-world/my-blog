@@ -373,8 +373,11 @@ str.match(reg);
 
 纯手码，如有不足或问题，欢迎指出
 
-原文链接：[JS 正则总结](https://github.com/zhongzihao1996/my-blog/tree/dev/23_JS%E6%AD%A3%E5%88%99%E6%80%BB%E7%BB%93)
+---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
 
 ---
 
 END
+
