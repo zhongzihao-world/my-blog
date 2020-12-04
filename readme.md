@@ -18,13 +18,13 @@
 
 # JavaScript
 
-- [JS事件循环 Event Loop](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/24.%20JS%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%20Event%20Loop)
+- [JS 事件循环 Event Loop](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/24.%20JS%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%20Event%20Loop)
 
 - [JS 判断数据类型是否为数组](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/7.%20JS%20%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E7%BB%84)
 
 - [浅谈JS原型链](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/8.%20%E6%B5%85%E8%B0%88JS%E5%8E%9F%E5%9E%8B%E9%93%BE)
 
-- [JS 各种循环性能对比](hhttps://github.com/zhongzihao1996/my-blog/tree/master/blogs/9.%20JS%20%E5%90%84%E7%A7%8D%E5%BE%AA%E7%8E%AF%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94)
+- [JS 各种循环性能对比](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/9.%20JS%20%E5%90%84%E7%A7%8D%E5%BE%AA%E7%8E%AF%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94)
 
 - [浅谈JS的call、apply和bind](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/15.%20%E6%B5%85%E8%B0%88JS%E7%9A%84call%E3%80%81apply%E5%92%8Cbind)
 
@@ -34,9 +34,9 @@
 
 - [Vue nextTick 源码](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/22.%20Vue%20nextTick%20%E6%BA%90%E7%A0%81)
 
-- [Vue异步更新dom原理](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/27.%20Vue%20%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0dom%E5%8E%9F%E7%90%86)
+- [Vue 异步更新dom原理](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/27.%20Vue%20%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0dom%E5%8E%9F%E7%90%86)
 
-- [Vue响应式原理](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/28.%20Vue%20%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86)
+- [Vue 响应式原理](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/28.%20Vue%20%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86)
 
 # Vue 应用
 
@@ -54,7 +54,7 @@
 
 # Nodejs
 
-- [Node.JS爬虫实战 - 爬取图片并下载到本地](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/2.%20Node.JS%20%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%20-%20%E7%88%AC%E5%8F%96%E5%9B%BE%E7%89%87%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0)
+- [Node.js 爬虫实战 - 爬取图片并下载到本地](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/2.%20Node.JS%20%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%20-%20%E7%88%AC%E5%8F%96%E5%9B%BE%E7%89%87%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0)
 
 - [使用node转发请求](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/18.%20%E4%BD%BF%E7%94%A8node%E8%BD%AC%E5%8F%91%E8%AF%B7%E6%B1%82)
 
@@ -62,7 +62,7 @@
 
 # 数据库
 
-- [egg-mongoose使用总结](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/16.%20egg-mongoose%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93)
+- [egg-mongoose 使用总结](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/16.%20egg-mongoose%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93)
 
 - [mongo 数据库的备份和恢复](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/31.%20mongo%20%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D)
 
