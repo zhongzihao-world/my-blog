@@ -257,7 +257,7 @@ setTimeout(() => {
 
 # 源码
 
-[源码](https://github.com/zhongzihao1996/my-blog/blob/master/30_JS%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%20Event%20Loop/index.js)
+[源码](https://github.com/zhongzihao1996/my-blog/blob/master/blogs/24.%20JS%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%20Event%20Loop/index.js)
 
 ---
 
