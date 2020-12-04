@@ -216,6 +216,7 @@ const compileUtils = {
 ## 什么是双向数据绑定
 
 上面我们实现了响应式的系统，但只是单向的，即数据驱动视图，什么是双向数据绑定呢？如下图：
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-da0e19e63fd51768.gif?imageMogr2/auto-orient/strip)
 
 我们常见的 v-model， 就是双向数据绑定，其实它是一个语法糖：

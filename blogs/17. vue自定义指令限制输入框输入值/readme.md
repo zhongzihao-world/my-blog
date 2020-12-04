@@ -47,6 +47,7 @@ Vue.directive('LimitInputNumber', {
 ```
 
 但该事件存在一个问题，就是在中文输入法的时候无法触发事件，导致用户可以输入中文
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-17e20f20c79ec0b8.gif?imageMogr2/auto-orient/strip)
 
 - 2. oninput 事件

@@ -16,14 +16,20 @@
 
 - 服务端渲染的页面(ssr)
   就是服务端已经返回了渲染好的 html 片段
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-8e2e60674809faf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 - 客户端渲染的页面(csr)
   常见的单页面应用就是客户端渲染
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-cc8a71d59b36164c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 第二种需要通过分析接口爬虫，本文讲解的是使用第一种，使用 nodejs 实现爬取远程图片下载到本地
 
 **最终效果：**
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-b666d6e13ad9c8a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-ce9d169f034cccbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
@@ -61,7 +67,9 @@ npm i fs --save
 # 开始爬虫
 
 爬取某户外网站，爬取首页推荐的图片并下载到本地
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-6481b7b3bc8d8078.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 1 流程分析
 - 分析页面结构，确定要爬取的内容
 - node 端 http 请求获取到页面内容
@@ -71,7 +79,9 @@ npm i fs --save
 2 编写代码
 axios 拿到 html 片段
 分析发现该图片在'newsimg'块里，cheerio 使用跟 jq 基本没什么区别,拿到图片标题和下载链接
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-bf603dbda388e2c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ```base
 const res = await axios.get(target_url);
 const html = res.data;

@@ -60,6 +60,7 @@ app.use(koaMount('/', koaStatic(resolve('../dist'))));
 ```
 
 这样差不多就完成了，跑服务然后打开 3000 端口，项目能够正常访问：
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-8ac039a7c54e90c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 2. 转发接口请求

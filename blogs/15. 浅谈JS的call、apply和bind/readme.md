@@ -73,6 +73,7 @@ console.log(man.extend.print()); // inside 99
 ```
 
 第二个输出是不是有点奇怪，是的，我们打印一下 man 对象，发现其跟上一个例子情况是一样的,记住只是构造函数的 this 指向实例对象
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-04cc3cad23df99d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 4.箭头函数

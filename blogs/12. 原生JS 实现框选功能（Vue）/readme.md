@@ -91,6 +91,7 @@ handleMouseUp() {
 假定矩形 A2 左上角坐标为 (x2,y2);矩形宽度为 width2,高度为 height2;
 
 画图分析，只看水平方向：
+
 ![x轴方向不相交](https://upload-images.jianshu.io/upload_images/10390288-0ea5067a4dce2e14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![x轴方向相交](https://upload-images.jianshu.io/upload_images/10390288-c83ff7a598ad8469.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

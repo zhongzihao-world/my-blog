@@ -7,6 +7,7 @@
 > 问：如何找回被 reset 的两次 commit，并合并最新的一次 commit 'demo4'
 
 使用 git log 查看，仅能看到 demo1 和 demo4 的提交记录
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-d7a342e7b9d7844b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 # git reflog
@@ -20,8 +21,11 @@ git reset  --hard  hash
 ```
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-5498290adc23bd74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 列出所有的提交记录，然后就可以执行回滚了，这里需要回滚到 demo3 的提交
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-ba529e1fe298d795.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 已经恢复到之前的代码了，那么问题来了，demo4 的提交被吃掉了，该怎么解决呢？
 
 # git cherry-pick

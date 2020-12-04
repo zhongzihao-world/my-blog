@@ -5,8 +5,11 @@
 最终实现效果如下
 
 **滚动加载：**
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-8f8671f31a9f397c.gif?imageMogr2/auto-orient/strip)
+
 **宽度自适应：**
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-8ee75e578f475e03.gif?imageMogr2/auto-orient/strip)
 
 # 原理

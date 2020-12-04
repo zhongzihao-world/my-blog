@@ -46,6 +46,7 @@
 上一步我们已经完成了一大半，写出了各个方向的动画，**难点是如何判断鼠标进入容器的方向**
 
 我们可以画图分析，如下图：
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-b2ba099241462336.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 假设该矩形的中心点坐标为 x0(x0,y0),鼠标进出矩形的边界坐标点为 x(x,y)

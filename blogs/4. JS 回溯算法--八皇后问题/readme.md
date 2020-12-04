@@ -246,6 +246,9 @@ console.log(queen.result);
 尝试跑了一下 n=16 的情况，cpu 直接燃烧，几分钟没出结果，果断放弃......
 可见递归有多么耗性能~~
 
+# 源码
+
+[源码](https://github.com/zhongzihao1996/my-blog/blob/master/5_JS%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95--%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/queen.js)
 
 ---
 

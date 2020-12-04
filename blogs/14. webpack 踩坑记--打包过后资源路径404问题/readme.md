@@ -51,6 +51,7 @@ assetsSubDirectory：'./'
 ```
 
 配置完成后，再打包访问，文字出来，背景图片裂开了......
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-238f40f68459e296.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 背景图片裂开
@@ -79,6 +80,7 @@ F12 发现，图片资源路径有问题：static/img/vague_bg.9cfff92.png。因
 ```
 
 设置完，再打包访问，perfect~
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-28cf8aebcd677fed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 # 后言

@@ -1,7 +1,8 @@
 # 背景
 
 > 两个页面 A、B，B 页面关闭时，通知 A 页面请求接口刷新列表页
-> ![](https://upload-images.jianshu.io/upload_images/10390288-7a37cfbfaab97b82.gif?imageMogr2/auto-orient/strip)
+
+![](https://upload-images.jianshu.io/upload_images/10390288-7a37cfbfaab97b82.gif?imageMogr2/auto-orient/strip)
 
 ## 实现
 

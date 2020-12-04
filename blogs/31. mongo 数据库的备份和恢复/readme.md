@@ -38,11 +38,13 @@ mongodump -h localhost:27017 -c articles -d blog -o ./
 执行完毕，我们点开blog目录发现，下面有后缀为 bson、json的文件，输出一个bson文件看，发现是乱码：
 
 ` `  ` cat articles.bson `  ` ` 
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-16dc64db99a795a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 其实我们备份的数据都是二进制的，我们直接查看不到的，需要结合 mongo 自带的 bsondump :
 
 ` `  ` bsondump .\articles.bson `  ` ` 
+
 ![](https://upload-images.jianshu.io/upload_images/10390288-3386de09c5d8ad06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 emmm，可以正常查看了
