@@ -191,7 +191,7 @@ const hill_sort = (list) => {
 
 # 源码
 
-[源码](https://github.com/zhongzihao1996/my-blog/tree/master/35_JS%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95)
+[源码](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/29.%20JS%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95)
 
 ---
 
