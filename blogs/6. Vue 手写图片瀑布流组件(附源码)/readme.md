@@ -9,7 +9,7 @@
 **宽度自适应：**
 ![](https://upload-images.jianshu.io/upload_images/10390288-8ee75e578f475e03.gif?imageMogr2/auto-orient/strip)
 
-## 原理
+# 原理
 
 分析可发现，该瀑布流每个图片元素宽度相等，高度不同；且从第二行开始，每个元素实际上都是插入到最小高度的那一列上。
 
@@ -140,7 +140,7 @@ waterfall_list = []; # 瀑布流用到的数据
   }
 ```
 
-## 源码
+# 源码
 
 使用,传一个图片宽度，和下边距即可
 
@@ -151,7 +151,13 @@ waterfall_list = []; # 瀑布流用到的数据
   </template>
 </v-water-fall>
 ```
-[源码](https://github.com/zhongzihao1996/my-blog/blob/master/7_Vue%20%E6%89%8B%E5%86%99%E5%9B%BE%E7%89%87%E7%80%91%E5%B8%83%E6%B5%81%E7%BB%84%E4%BB%B6(%E9%99%84%E6%BA%90%E7%A0%81)/waterFall.vue)
+
+[源码](https://github.com/zhongzihao1996/my-blog/blob/dev/blogs/6.%20Vue%20%E6%89%8B%E5%86%99%E5%9B%BE%E7%89%87%E7%80%91%E5%B8%83%E6%B5%81%E7%BB%84%E4%BB%B6(%E9%99%84%E6%BA%90%E7%A0%81)/waterFall.vue)
 
 ---
- END
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
+
+END
