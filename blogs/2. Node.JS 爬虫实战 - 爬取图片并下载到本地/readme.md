@@ -2,7 +2,7 @@
 
 爬虫应该遵循：[robots 协议](https://baike.baidu.com/item/robots%E5%8D%8F%E8%AE%AE/2483797?fr=aladdin)
 
-## 什么是爬虫
+# 什么是爬虫
 
 引用百度百科：
 
@@ -27,7 +27,7 @@
 ![](https://upload-images.jianshu.io/upload_images/10390288-ce9d169f034cccbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-## 准备
+# 准备
 
 1 目录
 
@@ -58,7 +58,7 @@ npm i cheerio --save
 npm i fs --save
 ```
 
-## 开始爬虫
+# 开始爬虫
 
 爬取某户外网站，爬取首页推荐的图片并下载到本地
 ![](https://upload-images.jianshu.io/upload_images/10390288-6481b7b3bc8d8078.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -103,88 +103,14 @@ await response.data.pipe(fs.createWriteStream(target_path));
 
 ---
 
-## 完整代码
+# 源码
 
-```base
-class stealData {
+[源码](https://github.com/zhongzihao1996/my-blog/blob/dev/blogs/2.%20Node.JS%20%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%20-%20%E7%88%AC%E5%8F%96%E5%9B%BE%E7%89%87%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0/stealData.js)
 
-  constructor() {
-    this.base_url = ''; //要爬取的网站
-    this.current_page = 1;
-    this.result_list = [];
-  }
-
-  async init() {
-    try {
-      await this.getPageData();
-      await this.downLoadPictures();
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  sleep(time) {
-    return new Promise((resolve) => {
-      console.log(`自动睡眠中，${time / 1000}秒后重新发送请求......`)
-      setTimeout(() => {
-        resolve();
-      }, time);
-    });
-  }
-
-  async getPageData() {
-    const target_url = this.base_url;
-    try {
-      const res = await axios.get(target_url);
-      const html = res.data;
-      const $ = cheerio.load(html);
-      const result_list = [];
-      $('.newscon').each((index, element) => {
-        result_list.push({
-          title: $(element).find('.newsintroduction').text(),
-          down_loda_url: $(element).find('img').attr('src').split('!')[0],
-        });
-      });
-      this.result_list.push(...result_list);
-      return Promise.resolve(result_list);
-    } catch (e) {
-      console.log('获取数据失败');
-      return Promise.reject(e);
-    }
-  }
-
-  async downLoadPictures() {
-    const result_list = this.result_list;
-    try {
-      for (let i = 0, len = result_list.length; i < len; i++) {
-        console.log(`开始下载第${i + 1}张图片!`);
-        await this.downLoadPicture(result_list[i].down_loda_url);
-        await this.sleep(3000 * Math.random());
-        console.log(`第${i + 1}张图片下载成功!`);
-      }
-      return Promise.resolve();
-    } catch (e) {
-      console.log('写入数据失败');
-      return Promise.reject(e)
-    }
-  }
-
-  async downLoadPicture(href) {
-    try {
-      const target_path = path.resolve(__dirname, `./cache/image/${href.split('/').pop()}`);
-      const response = await axios.get(href, { responseType: 'stream' });
-      await response.data.pipe(fs.createWriteStream(target_path));
-      console.log('写入成功');
-      return Promise.resolve();
-    } catch (e) {
-      console.log('写入数据失败');
-      return Promise.reject(e)
-    }
-  }
-
-}
-
-const thief = new stealData('xxx_url');
-thief.init();
-```
 ---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
+
+END
