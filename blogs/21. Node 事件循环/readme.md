@@ -222,7 +222,15 @@ handleIOTask:function(event){
 > - 聊天服务 - 轻量级、高流量，没有复杂的计算逻辑。
 
 ---
+# 参考
 
-文章来源:[Node.js 事件循环机制](https://www.cnblogs.com/onepixel/p/7143769.html)
+[Node.js 事件循环机制](https://www.cnblogs.com/onepixel/p/7143769.html)
+
+---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
 
 END
+

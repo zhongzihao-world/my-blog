@@ -262,8 +262,11 @@ const compileUtils = {
 
 # 源码
 
-[源码](https://github.com/zhongzihao1996/my-blog/blob/master/34_Vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/vue.js)
+[源码](https://github.com/zhongzihao1996/my-blog/blob/dev/blogs/28.%20Vue%20%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/vue.js)
 
+---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
 
 ---
 

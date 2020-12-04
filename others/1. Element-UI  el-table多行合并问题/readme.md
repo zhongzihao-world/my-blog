@@ -64,8 +64,15 @@ cellMouseLeave() {
 },
 ```
 
-## 完整代码
-[源码](https://github.com/zhongzihao1996/my-blog/blob/master/4_Element-UI%20%20el-table%E5%A4%9A%E8%A1%8C%E5%90%88%E5%B9%B6%E9%97%AE%E9%A2%98/table.vue)
+## 源码
+
+[源码](https://github.com/zhongzihao1996/my-blog/blob/dev/others/1.%20Element-UI%20%20el-table%E5%A4%9A%E8%A1%8C%E5%90%88%E5%B9%B6%E9%97%AE%E9%A2%98/table.vue)
 
 ---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
+
 END
+

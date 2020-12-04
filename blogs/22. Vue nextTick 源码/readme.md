@@ -117,8 +117,13 @@ function nextTickHandler() {
 
 # 源码
 
-[源码分析](https://github.com/zhongzihao1996/my-blog/blob/master/26_Vue%20nextTick%20%E6%BA%90%E7%A0%81/nextTick.js)
+[源码](https://github.com/zhongzihao1996/my-blog/blob/dev/blogs/22.%20Vue%20nextTick%20%E6%BA%90%E7%A0%81/nextTick.js)
 
 
 ---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
+
 END

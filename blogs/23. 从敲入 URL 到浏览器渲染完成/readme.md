@@ -180,8 +180,14 @@ RenderObject 树是基于 DOM 树建立起来的一棵新树，是为了布局�
 --- 
 至此，浏览器渲染完成。
 
+# 参考
+
+[面试题之从敲入 URL 到浏览器渲染完成 #3](https://github.com/biaochenxuying/blog/issues/3)
+
 ---
 
-文章来源:[面试题之从敲入 URL 到浏览器渲染完成 #3](https://github.com/biaochenxuying/blog/issues/3)
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
 
 END
