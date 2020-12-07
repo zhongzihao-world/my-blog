@@ -181,6 +181,76 @@ const hill_sort = (list) => {
 }
 ```
 
+## 5. 归并排序
+
+> 归并排序是建立在归并操作上的一种有效的排序算法，该算法是采用分治法的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。归并排序是一种稳定的排序方法。
+
+### 5.1 算法步骤
+
+- 1. 创建一个和需要归并的数组相同的新数组，让k指向原来数组的第一个位置，i指向新数组左半部分的第一个元素，j指向右半部分的一个元素。
+
+![](https://upload-images.jianshu.io/upload_images/10390288-20f5769634949edb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+- 2. 如果i指向的元素ei小于j指向的元素ej，则将ei放入k指向的位置，然后i++指向下一个元素，k++指向下一个需要存放的位置。否则如果ei>ej，则将ej放入k指向的位置，然后j++指向下一个元素，k++指向下一个需要存放的位置。
+
+![](https://upload-images.jianshu.io/upload_images/10390288-56368494a1ac7c51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- 3. 如果左半部分i指向的位置已经超过中间位置，而此时右半部分j还未移动到末尾，那么将j指向位置后面的所有元素都移动到k指向位置的后面，反之类似。
+
+![](https://upload-images.jianshu.io/upload_images/10390288-dc97e1d678fc1616.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+数组[8, 7, 6, 5, 4, 3, 2, 1]进行从小到大归并排序的过程：
+
+![](https://upload-images.jianshu.io/upload_images/10390288-a92d45c558aa5744.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+### 5.2 动画演示
+
+![](https://upload-images.jianshu.io/upload_images/10390288-f5b50c9b0ed2399f.gif?imageMogr2/auto-orient/strip)
+
+
+### 5.3 代码实现
+``` bash 
+const merger_sort = (list) => {
+  if (list.length <= 1) return list;
+
+  // 基准，切割为左右两半
+  const middle_pointer = Math.floor(list.length / 2);
+  const left_list = list.slice(0, middle_pointer);
+  const right_list = list.slice(middle_pointer, list.length);
+
+  return merge(merger_sort(left_list), merger_sort(right_list));
+};
+
+const merge = (left_list, right_list) => {
+  // 新数组，长度为左、右序列长度之和
+  const result = new Array(left_list.length + right_list.length);
+  let k = 0; // 新数组指针
+
+  let i = 0; // 左序列指针
+  let j = 0; // 右序列指针
+  while (i < left_list.length && j < right_list.length) {
+    // 左边比右边大，塞入新数组
+    if (left_list[i] <= right_list[j]) {
+      result[k++] = left_list[i++];
+    } else {
+      result[k++] = right_list[j++]
+    }
+  }
+  
+  // 若左或者右序列指针还没指到对应的尾部，全部塞入新数组即可
+  while (i < left_list.length) {
+    result[k++] = left_list[i++];
+  }
+  while (j < right_list.length) {
+    result[k++] = right_list[j++];
+  }
+
+  return result;
+};
+```
+
 
 
 # 参考

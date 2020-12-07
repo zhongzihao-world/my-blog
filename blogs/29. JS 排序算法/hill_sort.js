@@ -27,7 +27,7 @@ const hill_sort = (list) => {
     gap = Math.floor(gap / 3);
   }
   return list;
-}
+};
 
 
 console.log(data);

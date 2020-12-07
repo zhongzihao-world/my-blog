@@ -26,7 +26,7 @@ const bubbleSort = (list) => {
     if (!is_change) break;
   }
   return list;
-}
+};
 
 
 console.log(data);

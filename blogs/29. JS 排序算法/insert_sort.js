@@ -18,7 +18,7 @@ const insertSort = (list) => {
     list[j + 1] = temp;
   }
   return list;
-}
+};
 
 console.log(data);
 console.log('---------------------');
