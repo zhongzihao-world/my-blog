@@ -20,6 +20,7 @@ const insertSort = (list) => {
   return list;
 };
 
+
 console.log(data);
 console.log('---------------------');
 console.log(insertSort(data));

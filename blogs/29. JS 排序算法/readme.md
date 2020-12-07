@@ -46,11 +46,7 @@ while (len > 0) {
 - 2. 依次比较相邻的元素，直到数组元素比较完成，那么这时，最大的元素就应该在数组的最后面；
 - 3. 不断重复 1 和 2 的操作
 
-### 1.2 动画演示
-
-![](https://upload-images.jianshu.io/upload_images/10390288-606eef440c2cd6d9.gif?imageMogr2/auto-orient/strip)
-
-### 1.3 代码实现
+### 1.2 代码实现
 
 ``` bash 
 const bubbleSort = (list) => {
@@ -88,11 +84,7 @@ const bubbleSort = (list) => {
 - 2. 再从剩余未排序元素中继续寻找最小元素，然后放到已排序序列的末尾
 - 3. 重复第二步，直到所有元素均排序完毕
 
-### 2.2 动画演示
-
-![](https://upload-images.jianshu.io/upload_images/10390288-7c6b7a7af46ea9f1.gif?imageMogr2/auto-orient/strip)
-
-### 2.3 代码实现
+### 2.2 代码实现
 
 ``` bash 
 const selectSort = (list) => {
@@ -119,11 +111,7 @@ const selectSort = (list) => {
 - 2. 取出无序序列耳朵第一个元素，与有序序列从尾向前依次比较，若 
 - 3. 重复步骤2，直至无序序列全部比较完
 
-### 3.2 动画演示
-
-![](https://upload-images.jianshu.io/upload_images/10390288-1d786d1fa686da2d.gif?imageMogr2/auto-orient/strip)
-
-### 3.3 代码实现
+### 3.2 代码实现
 
 ``` bash 
 const insertSort = (list) => {
@@ -151,12 +139,7 @@ const insertSort = (list) => {
 - 2. 按增量序列个数 k，对序列进行 k 趟排序；
 - 3. 每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。
 
-### 4.2 动画演示
-
-![](https://upload-images.jianshu.io/upload_images/10390288-78210b6bf87b6954.gif?imageMogr2/auto-orient/strip)
-
-
-### 4.3 代码实现
+### 4.2 代码实现
 ``` bash 
 const hill_sort = (list) => {
   const len = list.length;
@@ -204,13 +187,7 @@ const hill_sort = (list) => {
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-a92d45c558aa5744.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-### 5.2 动画演示
-
-![](https://upload-images.jianshu.io/upload_images/10390288-f5b50c9b0ed2399f.gif?imageMogr2/auto-orient/strip)
-
-
-### 5.3 代码实现
+### 5.2 代码实现
 ``` bash 
 const merger_sort = (list) => {
   if (list.length <= 1) return list;
@@ -251,6 +228,38 @@ const merge = (left_list, right_list) => {
 };
 ```
 
+## 6. 快速排序
+
+> 快速排序由C. A. R. Hoare在1962年提出。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。
+
+### 6.1 算法步骤
+
+- 1. 从数列中挑出一个元素，称为"基准"（pivot）
+
+- 2. 重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任何一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。
+
+- 3. 递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。
+
+![](https://upload-images.jianshu.io/upload_images/10390288-3872725277eba6a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 6.2 代码实现
+``` bash 
+const quickSort = (list) => {
+  if (list.length <= 1) return list;
+  // 基准点
+  const basic = list.splice(Math.floor(list.length / 2), 1);
+  const left_arr = [];
+  const right_arr = [];
+  for (let i = 0, len = list.length; i < len; i++) {
+    if (list[i] <= basic) {
+      left_arr.push(list[i]);
+    } else {
+      right_arr.push(list[i]);
+    }
+  }
+  return quickSort(left_arr).concat(basic, quickSort(right_arr));
+};
+```
 
 
 # 参考
