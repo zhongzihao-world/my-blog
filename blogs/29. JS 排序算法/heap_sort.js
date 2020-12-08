@@ -8,36 +8,41 @@ const data = require('./data');
  */
 
 const heap_sort = (list) => {
-  const len = list.length;
+  let len = list.length;
   for (let i = Math.floor(len - 1 / 2); i >= 0; i--) {
-    maxheap_down(list, i, len - 1);
+    max_heap_down(list, i, len - 1);
   }
-  console.log(list);
+  for (let i = len - 1; i >= 0; i--) {
+    swap(list, 0, i);
+    len--;
+    max_heap_down(list, 0, len);
+  }
+  return list;
 };
 
-const maxheap_down = (list, start, end) => {
-  let c = start;
-  let l = c * 2 + 1;
-  let tmp = list[c];
+const max_heap_down = (list, i, len) => {
 
-  for (; l <= end; c = l, l = 2 * l + 1) {
-    if (l < end && list[l] < list[l + 1]) {
-      l++;
-      if (tmp >= list[l]) {
-        break;
-      }
-      else {
-        list[c] = list[l];
-        list[l] = tmp;
-      }
-    }
+  let left = i * 2 + 1; // 左子节点
+  let ritght = i * 2 + 2; // 右子节点
+  let largest = i;
 
+  if (left < len && list[left] > list[largest]) {
+    largest = left;
+  }
+  if (ritght < len && list[ritght] > list[largest]) {
+    largest = ritght;
+  }
+
+  if (largest !== i) {
+    swap(list, i, largest);
+    max_heap_down(list, largest, len);
   }
 
 };
 
-
-
+const swap = (list, i, j) => {
+  [list[i], list[j]] = [list[j], list[i]];
+}
 
 
 console.log(data);
