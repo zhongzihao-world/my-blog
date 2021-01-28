@@ -74,7 +74,7 @@
 
 # 算法
 
-- [JS回溯算法--八皇后问题](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/4.%20JS%20%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95--%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98)
+- [JS 回溯算法--八皇后问题](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/4.%20JS%20%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95--%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98)
 
 - [JS 动态规划算法--01背包问题](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/5.%20JS%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95--01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98)
 
