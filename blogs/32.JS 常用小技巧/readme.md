@@ -85,8 +85,41 @@ const Utils = {
 Utils[param];
 ```
 
-### 6. 
+### 6. 简单深拷贝
 
+日常使用中，经常遇到需要深拷贝的场景
+
+``` bash 
+const arr = JSON.parse(JSON.stringify({name:'小豪',age:'25',}));
+```
+
+但存在几个问题：
+
+-  Date 对象将变为 String 类型
+-  RegExp、Error对象变为空对象
+-  undefined、Function 丢失
+-  NAN、Infinity 变为null
+
+``` bash 
+const data = {
+  _number: 1,
+  _string: 'hello world',
+  _boolean: false,
+  _null: null,
+  _undefined: undefined,
+  _object: {},
+  _array: [],
+  _NAN: NaN,
+  _Infinity: Infinity,
+  _function: () => { },
+  _date: new Date(),
+  _reg: /.*/g,
+};
+console.log(JSON.parse(JSON.stringify(data)));
+```
+如下图：
+
+![](https://upload-images.jianshu.io/upload_images/10390288-96cd2357b3cd43ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 # Number
 
