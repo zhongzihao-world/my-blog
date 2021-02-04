@@ -18,6 +18,8 @@
 
 # JavaScript
 
+- [JS 常用小技巧](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/32.JS%20%E5%B8%B8%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7)
+
 - [JS 事件循环 Event Loop](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/24.%20JS%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%20Event%20Loop)
 
 - [JS 判断数据类型是否为数组](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/7.%20JS%20%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E7%BB%84)
