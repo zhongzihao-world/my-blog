@@ -166,6 +166,14 @@ startsWith 判断是否以 'https' 开头
 'https://www.baidu.com/'.startsWith('https');
 ```
 
+## 2. 判断是否回文数
+
+
+```bash
+let str = 'hello olleh';
+str === str.split('').reverse().join(''); // true
+```
+
 # Array
 
 ## 1. 数组去重
