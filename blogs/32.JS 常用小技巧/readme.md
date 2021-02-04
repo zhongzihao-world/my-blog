@@ -1,0 +1,144 @@
+# 前言
+
+JavaScript 是一门弱类型语言，其使用非常广泛。
+
+这里我总结了自己日常使用中的 Tips ,不断更新 ~.~
+
+# 常用技巧
+
+## 1. 数据类型转 Boolean
+
+``` bash 
+# !!
+!!0; // false
+!!undefined; // false
+!!null; // false
+!!(()=>{}); // true
+```
+
+## 2. 交换两数
+
+不使用临时变量的情况下，交换两数
+
+``` bash 
+let a = 1, b = 2;
+[a, b] = [b, a]; // [2, 1]
+```
+
+## 3. 短路赋值
+
+初始化参数，并赋予其默认值
+
+``` bash
+let param = test_param || []; 
+```
+
+## 4. if 判断优化
+
+当 if 判断中存在多种情况时，如:
+
+``` bash 
+if(param === 1 || param === 2 || param === 3){
+  // do something
+}
+```
+
+考虑使用数组进行优化
+
+``` bash 
+if([1, 2, 3].includes(param)){
+  // do something
+}
+```
+
+## 5. switch 判断优化
+
+``` bash 
+switch (param) {
+  case '1': {
+    // do something
+    break;
+  }
+  case '2': {
+    // do something
+    break;
+  }
+  default: {
+    // do something
+    break;
+  }
+}
+```
+
+使用对象进行优化
+
+``` bash 
+const Utils = {
+  '1': () => {
+    // do something
+  },
+  '2': () => {
+    // do something
+  },
+},
+
+Utils[param];
+```
+
+### 6. 
+
+
+# Number
+
+## 1. 保留两位小数
+
+``` bash 
+new Number(1).toFixed(2); // '1.00'
+new Number(1.994).toFixed(2); // "1.99"
+new Number(1.995).toFixed(2); // "2.00"
+```
+
+# String
+
+# Array
+
+## 1. 数组去重
+
+使用 Set 进行数组去重
+
+``` bash
+let arr = [1, 2, 2, 3, 3, 4, 5];
+arr = [...new Set(arr)];
+```
+
+## 1. 数组求和
+
+``` bash
+[1, 2, 3, 4].reduce((a, b) => a + b);  // 10
+```
+
+## 1. 初始化二维数组
+
+初始化 5*5 二维数组
+
+` new Array(5).fill(0).map(()=> new Array(5).fill(0));`
+
+## 1. 平铺多维数组
+
+flat 展开数组，参数表示要提取嵌套数组的结构深度 
+
+``` bash 
+const arr = new Array(5).fill(0).map(()=> new Array(5).fill(0));
+arr.flat(Infinity);
+```
+
+# Object
+
+
+---
+
+[我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
+
+---
+
+END
