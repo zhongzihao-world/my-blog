@@ -16,7 +16,7 @@ JavaScript 是一门弱类型语言，其使用非常广泛。
 !!(()=>{}); // true
 ```
 
-## 2. 交换两数
+## 2. 解构交换两数
 
 不使用临时变量的情况下，交换两数
 
@@ -85,7 +85,7 @@ const Utils = {
 Utils[param];
 ```
 
-### 6. 简单深拷贝
+## 6. 简单深拷贝
 
 日常使用中，经常遇到需要深拷贝的场景
 
@@ -100,26 +100,22 @@ const arr = JSON.parse(JSON.stringify({name:'小豪',age:'25',}));
 -  undefined、Function 丢失
 -  NAN、Infinity 变为null
 
-``` bash 
-const data = {
-  _number: 1,
-  _string: 'hello world',
-  _boolean: false,
-  _null: null,
-  _undefined: undefined,
-  _object: {},
-  _array: [],
-  _NAN: NaN,
-  _Infinity: Infinity,
-  _function: () => { },
-  _date: new Date(),
-  _reg: /.*/g,
-};
-console.log(JSON.parse(JSON.stringify(data)));
-```
 如下图：
 
 ![](https://upload-images.jianshu.io/upload_images/10390288-96cd2357b3cd43ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 7. 动态正则匹配
+
+eval 生成正则表达式
+
+``` bash 
+let str = 'hello world ';
+let reg1 = `/hello/g`;
+let reg2 = `/world/g`;
+
+eval(reg1).test(str); // true
+eval(reg2).test(str); // true
+```
 
 # Number
 
@@ -130,6 +126,35 @@ new Number(1).toFixed(2); // '1.00'
 new Number(1.994).toFixed(2); // "1.99"
 new Number(1.995).toFixed(2); // "2.00"
 ```
+
+## 2. 幂运算
+
+``` bash 
+Math.pow(2,10); // 1024
+2**10; // 1024
+```
+
+## 3. 安全计算
+
+js中进行数字计算时候，会出现精度误差的问题，如两个小数相乘：
+
+```bash
+ 0.1*0.2; //  0.02000000000000000
+ 0.1*0.2 === 0.02; // false
+ ```
+
+封装一个乘法计算函数：
+
+ ``` bash 
+function safeAccumulate(arg1,arg2) {
+  var m=0,s1=arg1.toString(),s2=arg2.toString();
+  try{m+=s1.split(".")[1].length}catch(e){}
+  try{m+=s2.split(".")[1].length}catch(e){}
+  return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m);
+}
+safeAccumulate(0.1, 0.2); // 0.02
+safeAccumulate(0.1, 0.2) === 0.02; // true
+ ```
 
 # String
 
@@ -144,19 +169,13 @@ let arr = [1, 2, 2, 3, 3, 4, 5];
 arr = [...new Set(arr)];
 ```
 
-## 1. 数组求和
+## 2. 数组求和
 
 ``` bash
 [1, 2, 3, 4].reduce((a, b) => a + b);  // 10
 ```
 
-## 1. 初始化二维数组
-
-初始化 5*5 二维数组
-
-` new Array(5).fill(0).map(()=> new Array(5).fill(0));`
-
-## 1. 平铺多维数组
+## 3. 平铺多维数组
 
 flat 展开数组，参数表示要提取嵌套数组的结构深度 
 
@@ -164,6 +183,12 @@ flat 展开数组，参数表示要提取嵌套数组的结构深度
 const arr = new Array(5).fill(0).map(()=> new Array(5).fill(0));
 arr.flat(Infinity);
 ```
+
+## 4. 初始化二维数组
+
+初始化 5*5 二维数组
+
+` new Array(5).fill(0).map(()=> new Array(5).fill(0));`
 
 # Object
 
