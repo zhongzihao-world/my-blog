@@ -158,6 +158,14 @@ safeAccumulate(0.1, 0.2) === 0.02; // true
 
 # String
 
+## 1. 判断是否是 https 链接
+
+startsWith 判断是否以 'https' 开头
+
+```bash
+'https://www.baidu.com/'.startsWith('https');
+```
+
 # Array
 
 ## 1. 数组去重
@@ -192,6 +200,16 @@ arr.flat(Infinity);
 
 # Object
 
+## 1. 对象遍历
+
+``` bash 
+const obj = { name: '小豪', age: 25 };
+Object.keys(obj).forEach(key => {
+  console.log(`${key}:${obj[key]}`);
+});
+// name:小豪
+// age:25
+```
 
 ---
 
