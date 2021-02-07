@@ -219,6 +219,23 @@ Object.keys(obj).forEach(key => {
 // age:25
 ```
 
+## 2. 冻结对象
+
+Object.freeze() 冻结对象
+
+``` bash 
+let obj = { name: '小豪', age: 25 };
+Object.freeze(obj);
+
+obj.age = 18; // 25 修改失败
+delete obj.age; // false 无法删除
+```
+
+
+---
+
+后续不断更新，欢迎评论补充~
+
 ---
 
 [我的博客](https://github.com/zhongzihao1996/my-blog/tree/master)
