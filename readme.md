@@ -18,7 +18,7 @@
 
 # JavaScript
 
-- [JS ES6、ES7、ES8、ES9、ES10、ES11、ES12新特性](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/34.%20ES6%E3%80%81ES7%E3%80%81ES8%E3%80%81ES9%E3%80%81ES10%E3%80%81ES11%E3%80%81ES12%E6%96%B0%E7%89%B9%E6%80%A7)
+- [ES6、ES7、ES8、ES9、ES10、ES11、ES12新特性](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/34.%20ES6%E3%80%81ES7%E3%80%81ES8%E3%80%81ES9%E3%80%81ES10%E3%80%81ES11%E3%80%81ES12%E6%96%B0%E7%89%B9%E6%80%A7)
 
 - [JS 常用小技巧](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/32.%20JS%20%E5%B8%B8%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7)
 
