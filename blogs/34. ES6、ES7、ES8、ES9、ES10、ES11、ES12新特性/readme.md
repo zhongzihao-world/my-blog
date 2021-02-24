@@ -1,8 +1,8 @@
 # 前言
 
-前端学习永无止境，学习吧骚年。
+前端学习永无止境，学习吧骚年。后面将不断更新
 
-本文集合了 ES6~ES11 常用到的特性，包括还在规划的 ES12，使用新特性需要使用最新版的 bable 就行转义
+本文集合了 ES6~ES11 常用到的特性，包括还在规划的 ES12，只列举大概使用，详细介绍的话内容量将十分巨大~.~。PS：使用新特性需要使用最新版的 bable 就行转义
 
 # 新特性
 
@@ -231,8 +231,22 @@ flatMap()
 
 ### 3. String.prototype.matchAll
 
+> matchAll（）为所有匹配的匹配对象返回一个迭代器
+
+``` bash 
+const raw_arr = 'test1  test2  test3'.matchAll((/t(e)(st(\d?))/g));
+const arr = [...raw_arr];
+```
+
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7aedab0dda0454d87ca9953bf8cee92~tplv-k3u1fbpfcp-watermark.image)
+
 ### 4. Symbol.prototype.description
 
+> 只读属性，回 Symbol 对象的可选描述的字符串。
+
+``` bash 
+Symbol('description').description; // 'description'
+```
 
 ### 5. Object.fromEntries()
 
@@ -240,14 +254,11 @@ flatMap()
 
 ``` bash 
 // 通过 Object.fromEntries， 可以将 Map 转化为 Object:
-// 通过 Object.fromEntries， 可以将 Map 转化为 Object:
 const map = new Map([ ['foo', 'bar'], ['baz', 42] ]);
-const obj = Object.fromEntries(map);
-console.log(obj); // { foo: "bar", baz: 42 }
+console.log(Object.fromEntries(map)); // { foo: "bar", baz: 42 }
 ```
 
 ### 6. 可选 Catch
-
 
 ## ES11（2020）
 
@@ -284,15 +295,17 @@ let u1 = user.childer?.name // undefined
 > 返回一个在所有给定的promise已被决议或被拒绝后决议的promise，并带有一个对象数组，每个对象表示对应的promise结果
 
 ``` bash 
-  const promise1 = Promise.resolve(3);
-  const promise2 = 42;
-  const promise3 = new Promise((resolve, reject) => reject('我是失败的Promise_1'))
-  const promise4 = new Promise((resolve, reject) => reject('我是失败的Promise_2'))
-  const promiseList = [promise1,promise2,promise3, promise4]
-  Promise.allSettled(promiseList).then(values=>{
-    console.log(26, values)
-  })
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => reject('我是失败的Promise_1'));
+const promise4 = new Promise((resolve, reject) => reject('我是失败的Promise_2'));
+const promiseList = [promise1,promise2,promise3, promise4]
+Promise.allSettled(promiseList)
+.then(values=>{
+  console.log(values)
+});
 ```
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bc2c2cbb66e5413fb1394c39f9060fe2~tplv-k3u1fbpfcp-watermark.image)
 
 ### 4. import()
 
@@ -309,15 +322,71 @@ let u1 = user.childer?.name // undefined
  - node：global
 
 ## ES12（2021）
+
 ### 1. replaceAll
+
+> 返回一个全新的字符串，所有符合匹配规则的字符都将被替换掉
+
+``` bash 
+const str = 'hello world';
+str.replaceAll('l', ''); // "heo word"
+```
 
 ### 2. Promise.any
 
+> Promise.any() 接收一个Promise可迭代对象，只要其中的一个 promise 成功，就返回那个已经成功的 promise 。如果可迭代对象中没有一个 promise 成功（即所有的 promises 都失败/拒绝），就返回一个失败的 promise
+
+``` bash 
+const promise1 = new Promise((resolve, reject) => reject('我是失败的Promise_1'));
+const promise2 = new Promise((resolve, reject) => reject('我是失败的Promise_2'));
+const promiseList = [promise1, promise2];
+Promise.any(promiseList)
+.then(values=>{
+  console.log(values);
+})
+.catch(e=>{
+  console.log(e);
+});
+```
+
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/368110e5500d456b80fbf1239c146a72~tplv-k3u1fbpfcp-watermark.image)
+
 ### 3. WeakRefs
+
+> 使用WeakRefs的Class类创建对对象的弱引用(对对象的弱引用是指当该对象应该被GC回收时不会阻止GC的回收行为)
 
 ### 4. 逻辑运算符和赋值表达式
 
+> 逻辑运算符和赋值表达式，新特性结合了逻辑运算符（&&，||，??）和赋值表达式而JavaScript已存在的 复合赋值运算符有：
+
+``` bash 
+a ||= b
+//等价于
+a = a || (a = b)
+
+a &&= b
+//等价于
+a = a && (a = b)
+
+a ??= b
+//等价于
+a = a ?? (a = b)
+
+```
+
 ### 5. 数字分隔符
+
+> 数字分隔符，可以在数字之间创建可视化分隔符，通过_下划线来分割数字，使数字更具可读性
+
+``` bash 
+const money = 1_000_000_000;
+//等价于
+const money = 1000000000;
+
+1_000_000_000 === 1000000000; // true
+```
+
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fded7875fb8540018cf35ff2aa5fa103~tplv-k3u1fbpfcp-watermark.image)
 
 
 
