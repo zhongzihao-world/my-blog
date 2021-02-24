@@ -18,7 +18,9 @@
 
 # JavaScript
 
-- [JS 常用小技巧](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/32.JS%20%E5%B8%B8%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7)
+- [JS ES6、ES7、ES8、ES9、ES10、ES11、ES12新特性](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/34.%20ES6%E3%80%81ES7%E3%80%81ES8%E3%80%81ES9%E3%80%81ES10%E3%80%81ES11%E3%80%81ES12%E6%96%B0%E7%89%B9%E6%80%A7)
+
+- [JS 常用小技巧](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/32.%20JS%20%E5%B8%B8%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7)
 
 - [JS 事件循环 Event Loop](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/24.%20JS%20%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%20Event%20Loop)
 
@@ -86,4 +88,4 @@
 
 - [Jenkins+Docker 持续集成、部署（CI、CD）项目实践](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/1.%20Jenkins%2BDocker%20%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E3%80%81%E9%83%A8%E7%BD%B2%EF%BC%88CI/CD%EF%BC%89%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5)
 
-- [RSA 非对称加密原理](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/33.RSA%20%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%8E%9F%E7%90%86)
+- [RSA 非对称加密原理](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/33.%20RSA%20%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%8E%9F%E7%90%86)
