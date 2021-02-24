@@ -1,25 +1,27 @@
 # 前言
 
-常规 vue 项目打包后访问，返回 html 内容只有一个 id 为 app 的 div，其他内容块都是通过 js 动态生成的。
+常规 vue 项目打包后访问，返回一个只包含 div 的 html，其他内容块都是通过 js 动态生成的。
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d93b3a47622c44108d30deb4c8570001~tplv-k3u1fbpfcp-watermark.image)
 
-有两个比较大的问题：
+存在两个比较大的问题：
 
   - 不利于 seo
   - 首屏加载页慢，用户体验不好
 
-本文是自己总结的几点优化经验，如有不足，欢迎指出~
+本文是自己根据项目经验总结的方案，如有不足，欢迎指出~
 
 # 优化
 
 ## SSR
 
+> SSR(Server-Side Rendering) 即服务端渲染，把 vue 组件在服务器端渲染为组装好的 HTML 字符串，然后将它们直接发送到浏览器，最后需要将这些静态标记混合在客户端上完全可交互的应用程序。
+
 使用 ssr 重新部署构建项目后：
 
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/aec0a730009e4a71916f5696cb119369~tplv-k3u1fbpfcp-watermark.image)
 
-可以看到返回的内容就已经包含了首屏的 html 代码块 perfect!~.~
+可以看到返回的内容就已经包含了首屏内容的 html 代码块，perfect!~.~
 
 **极速传送门**： [基于vue-cli4.0+Typescript+SSR的小Demo](https://github.com/zhongzihao1996/vue-ssr-demo)
 
@@ -28,7 +30,7 @@
 
 使用 es6 module 进行按需引入
 
-路由文件中按需引入组件：
+### 1. 路由文件中按需引入组件
 
 ``` bash 
 # router.index.ts
@@ -51,7 +53,9 @@ export function createRouter() {
 }
 ```
 
-静态库按需引入模块，而不是全部，如 element-ui 库中，我只想用 button 组件 ：
+### 2. 静态库按需引入模块，而不是全部
+
+如 element-ui 库中，我只想用 button 组件 ：
 
 ``` bash 
 import {
@@ -113,6 +117,9 @@ configureWebpack: {
       }
       : undefined,
 },
+
+# index.html 手动引入静态资源
+<script src="/js/element-ui/element-ui.2.11.1.js"></script>
 ```
 
 ---
