@@ -36,8 +36,6 @@
 
 # Vue 原理
 
-- [Vue SPA 首屏优化实战](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/35.%20Vue%20SPA%20%E9%A6%96%E5%B1%8F%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98)
-
 - [Vue nextTick 源码](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/22.%20Vue%20nextTick%20%E6%BA%90%E7%A0%81)
 
 - [Vue 异步更新dom原理](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/27.%20Vue%20%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0dom%E5%8E%9F%E7%90%86)
@@ -45,6 +43,8 @@
 - [Vue 响应式原理](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/28.%20Vue%20%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86)
 
 # Vue 应用
+
+- [Vue SPA 首屏优化实战](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/35.%20Vue%20SPA%20%E9%A6%96%E5%B1%8F%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98)
 
 - [Vue 手写图片瀑布流组件(附源码)](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/6.%20Vue%20%E6%89%8B%E5%86%99%E5%9B%BE%E7%89%87%E7%80%91%E5%B8%83%E6%B5%81%E7%BB%84%E4%BB%B6(%E9%99%84%E6%BA%90%E7%A0%81))
 
