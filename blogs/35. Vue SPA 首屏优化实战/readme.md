@@ -7,7 +7,7 @@
 存在两个比较大的问题：
 
   - 不利于 seo
-  - 首屏加载页慢，用户体验不好
+  - 首屏加载慢，用户体验不好
 
 本文是自己根据项目经验总结的方案，如有不足，欢迎指出~
 
@@ -82,18 +82,31 @@ css 文件放 header 中，js 文件放 body前，不过 vue 已经帮我们处�
 推荐一个制作雪碧图的网站： [CSS Sprites Generator](https://www.toptal.com/developers/css/sprite-generator)
 
 
-## 使用CDN
+## CDN 加速
 
-静态资源都上传到 CDN，提高访问速度
+> CDN(Content Delivery Network)，即内容分发网络，构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。
+
+静态资源都上传到 CDN，可以极大地提高访问速度
 
 **不使用 CDN：**
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ade6f977203247f78a139c9ef46f5508~tplv-k3u1fbpfcp-watermark.image)
+![](https://upload-images.jianshu.io/upload_images/10390288-0134100eec9f0cb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 **使用 CDN：**
 
-可以看到使用 CDN后，会对静态文件进行 GZIP 压缩， 下载度度极大的提高
+可以看到使用 CDN后， 下载度度极大的提高
+
+![](https://upload-images.jianshu.io/upload_images/10390288-efaae0218477990b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+## 静态资源压缩、开启 GZIP 压缩
+
+对 css、js、图片等资源进行压缩，并且服务器开启 GZIP 压缩
+
+![](https://upload-images.jianshu.io/upload_images/10390288-ad1810045ad152c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+可以看到，压缩过后，源文件 1.7M 变为 285kb，体积大大减小
 
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d55fb4fc258545b48ed9cda692c717a6~tplv-k3u1fbpfcp-watermark.image)
 
