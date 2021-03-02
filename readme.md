@@ -80,7 +80,7 @@
 
 - [git 合并多个 commit](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/20.%20git%20%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAcommit)
 
-# 算法
+# 数据结构与算法
 
 - [JS 回溯算法--八皇后问题](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/4.%20JS%20%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95--%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98)
 
