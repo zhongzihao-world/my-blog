@@ -74,6 +74,8 @@
 
 - [mongo 数据库的备份和恢复](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/31.%20mongo%20%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D)
 
+- [备份 docker 容器内的 mongo数据库](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/37.%20%E5%A4%87%E4%BB%BD%20docker%20%E5%AE%B9%E5%99%A8%E5%86%85%E7%9A%84%20mongo%E6%95%B0%E6%8D%AE%E5%BA%93)
+
 # Git
 
 - [git reflog 回滚本地代码](https://github.com/zhongzihao1996/my-blog/tree/master/blogs/3.%20git%20reflog%20%E5%9B%9E%E6%BB%9A%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81)
