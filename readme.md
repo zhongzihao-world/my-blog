@@ -1,6 +1,10 @@
 # 简介
 
-记录了我的学习过程，经常更新
+为了方便文章管理，以后博客都在网站更新：
+
+[小豪看世界](http://www.zhongzihao.cn): http://www.zhongzihao.cn
+
+使用 vuepress 进行博客编写，nginx 部署，后期将尝试和配置后台打通~
 
 # 浏览器原理
 
